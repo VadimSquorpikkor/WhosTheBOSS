@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        style="@style/medium_text"
+        android:text="Distortion"
+        android:gravity="start"
+        android:id="@+id/name"
+        android:layout_weight="1"
+        android:paddingStart="20dp"
+        />
+
+    <TextView
+        style="@style/large_text"
+        android:text="DS-1"
+        android:id="@+id/short_name"
+        android:layout_weight="4"/>
+
+</LinearLayout>

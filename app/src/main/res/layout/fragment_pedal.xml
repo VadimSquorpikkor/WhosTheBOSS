@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        style="@style/medium_text"
+        android:text="!Distortion"
+        android:id="@+id/name"/>
+
+    <TextView
+        style="@style/large_text"
+        android:text="!DS-1"
+        android:id="@+id/short_name"/>
+
+    <ImageView
+        style="@style/base_style"
+        android:id="@+id/image"
+        />
+    <!--        android:src="@drawable/ds_1"-->
+
+
+
+</LinearLayout>

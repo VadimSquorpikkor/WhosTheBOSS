@@ -8,31 +8,31 @@ class Pedal {
     /**
      * Имя (Distortion)
      */
-    String name;
+    private String name;
     /**
      * Короткое имя (DS-1)
      */
-    String shortName;
+    private String shortName;
     /**
      * Ссылка на картинку
      */
-    int image;
+    private int image;
     /**
      * Год начала продаж
      */
-    int yearStart;
+    private int yearStart;
     /**
      * Год окончания продаж, если = 0, значит ещё продается
      */
-    int yearEnd;
+    private int yearEnd;
     /**
      * моё отношение: хочу купить, есть такая, не нужна, хочу такую, но дорого, есть более лучшая (не всегда более новая) версия, не знаю зачем и т.д. Будет задаваться static final String
      */
-    String status;
+    private String status;
     /**
      * Описание
      */
-    String description;
+    private String description;
 
     public Pedal(String name, String shortName, int image, int yearStart, int yearEnd) {
         this.name = name;
@@ -56,5 +56,25 @@ class Pedal {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getShortName() {
+        return shortName;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public int getYearStart() {
+        return yearStart;
+    }
+
+    public int getYearEnd() {
+        return yearEnd;
     }
 }

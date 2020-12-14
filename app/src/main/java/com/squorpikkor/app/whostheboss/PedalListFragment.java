@@ -3,57 +3,73 @@ package com.squorpikkor.app.whostheboss;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class PedalListFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    ListView lvMain;
+    ArrayList<Pedal> sourceList = new ArrayList<>();
+    PedalAdapter pedalAdapter;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public PedalListFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment PedalListFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static PedalListFragment newInstance(String param1, String param2) {
-        PedalListFragment fragment = new PedalListFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    public static PedalListFragment newInstance() {
+        return new PedalListFragment();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pedal_list, container, false);
+        final View view = inflater.inflate(R.layout.fragment_pedal_list, container, false);
+
+        sourceList.add(new Pedal("Distortion", "DS-1", R.drawable.ds_1, 1981, 0));
+
+        // находим список
+        lvMain = view.findViewById(R.id.pedal_list);
+
+        // создаем адаптер
+        pedalAdapter = new PedalAdapter(getContext(),
+                R.layout.pedal_list_item, sourceList);
+
+        // присваиваем адаптер списку
+        lvMain.setAdapter(pedalAdapter);
+
+        //Лисенер для элемента ListView
+        lvMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                // Create new fragment and transaction
+                Fragment newFragment = new PedalFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+                // Replace whatever is in the fragment_container view with this fragment,
+                // and add the transaction to the back stack
+                transaction.replace(R.id.fragment_container, newFragment);
+                transaction.addToBackStack(null);
+
+                // Commit the transaction
+                transaction.commit();
+
+            }
+        });
+
+        return view;
     }
+
+    /*@Override
+    public void onResume() {
+        super.onResume();
+        sourceList.clear();
+        sourceList.addAll(sourceList);
+        lvMain.setAdapter(pedalAdapter);
+
+    }*/
 }
