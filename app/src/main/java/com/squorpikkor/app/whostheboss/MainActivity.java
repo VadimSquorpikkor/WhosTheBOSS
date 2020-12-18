@@ -3,6 +3,7 @@ package com.squorpikkor.app.whostheboss;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.widget.ListView;
@@ -12,10 +13,15 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    public MainViewModel mViewModel;
+    public static final String TAG = "..........";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mViewModel = new ViewModelProvider(this).get(MainViewModel.class);
 
         //fill the layout
         FragmentManager manager = getSupportFragmentManager();

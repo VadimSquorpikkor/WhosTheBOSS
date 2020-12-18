@@ -1,40 +1,37 @@
 package com.squorpikkor.app.whostheboss;
 
 import android.app.Application;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
 import java.util.ArrayList;
 
-//class MainViewModel extends ViewModel {
-class MainViewModel extends AndroidViewModel {
+import static com.squorpikkor.app.whostheboss.MainActivity.TAG;
 
-    /*ArrayList<Pedal> pedalList;
+public class MainViewModel extends ViewModel {
 
-    public MainViewModel() {
-        pedalList = createPedalList();
-    }
-
-    public ArrayList<Pedal> getPedalList() {
-        return pedalList;
-    }
-
-    private ArrayList<Pedal> createPedalList() {
-        ArrayList<Pedal> list = new ArrayList<>();
-        list.add(new Pedal("Distortion", "DS-1", R.drawable.ds_1, 1981, 0));
-        return list;
-    }*/
-
-    private MutableLiveData<ArrayList<Pedal>> pedalList = new MutableLiveData<>();
-
-    public MainViewModel(@NonNull Application application) {
-        super(application);
-    }
+    private MutableLiveData<ArrayList<Pedal>> pedalList;
 
     public MutableLiveData<ArrayList<Pedal>> getPedalList() {
+        if (pedalList == null) {
+            pedalList = new MutableLiveData<>();
+            loadList();
+        }
         return pedalList;
     }
 
+    private void loadList() {
+        ArrayList<Pedal> list = new ArrayList<>();
+        list.add(new Pedal("Distortion", "DS-1", R.drawable.ds_1, 1981, 0));
+        pedalList.setValue(list);
+    }
+
+    public Pedal getPedal(int position) {
+        return pedalList.getValue().get(position);
+    }
 }
