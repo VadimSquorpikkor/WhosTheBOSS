@@ -51,8 +51,9 @@ public class PedalListFragment extends Fragment {
 
         //Лисенер для элемента ListView
         lvMain.setOnItemClickListener((parent, view1, position, id) -> {
+            mViewModel.setPosition(position);
             // Create new fragment and transaction
-            Fragment newFragment = new PedalFragment(position);
+            Fragment newFragment = new PedalFragment();
             FragmentTransaction transaction = getFragmentManager().beginTransaction();
             // Replace whatever is in the fragment_container view with this fragment,
             // and add the transaction to the back stack

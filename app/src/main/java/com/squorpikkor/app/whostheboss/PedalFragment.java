@@ -14,16 +14,16 @@ import android.widget.TextView;
 
 public class PedalFragment extends Fragment {
 
-    int position;
+//    int position;
     View view;
     TextView nameView;
     TextView shortNameView;
     TextView yearView;
     ImageView imageView;
 
-    public PedalFragment(int position) {
+    /*public PedalFragment() {
         this.position = position;
-    }
+    }*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class PedalFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         MainViewModel model = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
-        Pedal pedal = model.getPedal(position);
+        Pedal pedal = model.getPedal(model.getPosition());
         nameView.setText(pedal.getName());
         shortNameView.setText(pedal.getShortName());
         imageView.setImageResource(pedal.getImage());
@@ -46,10 +46,12 @@ public class PedalFragment extends Fragment {
     }
 
     private String getYears(int start, int end) {
-        String s;
-        if (end == 0) s = "now";
-        else s = String.valueOf(end);
-        return start + " - " + s;
+        String s,e;
+        if (start==-1) s = "?";
+        else s = String.valueOf(start);
+        if (end == 0) e = "now";
+        else e = String.valueOf(end);
+        return s + " - " + e;
     }
 
 }

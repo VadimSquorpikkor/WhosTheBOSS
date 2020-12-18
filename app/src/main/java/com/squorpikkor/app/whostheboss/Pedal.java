@@ -18,6 +18,10 @@ class Pedal {
      */
     private int image;
     /**
+     * Ссылка на картинку
+     */
+    private int smallImage;
+    /**
      * Год начала продаж
      */
     private int yearStart;
@@ -38,6 +42,15 @@ class Pedal {
         this.name = name;
         this.shortName = shortName;
         this.image = image;
+        this.yearStart = yearStart;
+        this.yearEnd = yearEnd;
+    }
+
+    public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd) {
+        this.name = name;
+        this.shortName = shortName;
+        this.image = image;
+        this.smallImage = smallImage;
         this.yearStart = yearStart;
         this.yearEnd = yearEnd;
     }
@@ -76,5 +89,9 @@ class Pedal {
 
     public int getYearEnd() {
         return yearEnd;
+    }
+
+    public int getSmallImage() {
+        return smallImage;
     }
 }
