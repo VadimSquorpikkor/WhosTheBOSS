@@ -18,6 +18,7 @@ public class PedalFragment extends Fragment {
     View view;
     TextView nameView;
     TextView shortNameView;
+    TextView yearView;
     ImageView imageView;
 
     public PedalFragment(int position) {
@@ -30,6 +31,7 @@ public class PedalFragment extends Fragment {
         nameView = view.findViewById(R.id.name);
         shortNameView = view.findViewById(R.id.short_name);
         imageView = view.findViewById(R.id.image);
+        yearView = view.findViewById(R.id.years);
         return view;
     }
 
@@ -40,6 +42,14 @@ public class PedalFragment extends Fragment {
         nameView.setText(pedal.getName());
         shortNameView.setText(pedal.getShortName());
         imageView.setImageResource(pedal.getImage());
+        yearView.setText(getYears(pedal.getYearStart(), pedal.getYearEnd()));
+    }
+
+    private String getYears(int start, int end) {
+        String s;
+        if (end == 0) s = "now";
+        else s = String.valueOf(end);
+        return start + " - " + s;
     }
 
 }

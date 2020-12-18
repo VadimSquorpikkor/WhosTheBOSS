@@ -13,9 +13,9 @@ import java.util.List;
 
 class PedalAdapter extends ArrayAdapter<Pedal> {
 
-    private LayoutInflater inflater;
-    private int layout;
-    private List<Pedal> sourceList;
+    private final LayoutInflater inflater;
+    private final int layout;
+    private final List<Pedal> sourceList;
 
     PedalAdapter(Context context, int resource, List<Pedal> sourceList) {
         super(context, resource, sourceList);
@@ -34,7 +34,7 @@ class PedalAdapter extends ArrayAdapter<Pedal> {
         Pedal pedal = sourceList.get(position);
         ((TextView)view.findViewById(R.id.name)).setText(pedal.getName());
         ((TextView)view.findViewById(R.id.short_name)).setText(pedal.getShortName());
-//        ((ImageView)view.findViewById(R.id.image)).setImageResource(pedal.getImage());
+        ((ImageView)view.findViewById(R.id.image)).setImageResource(pedal.getImage());
 
         return view;
     }
