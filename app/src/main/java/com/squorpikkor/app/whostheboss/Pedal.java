@@ -5,18 +5,30 @@ package com.squorpikkor.app.whostheboss;
  */
 class Pedal {
 
+    public static final int DISTORTION_OVERDRIVE = 0;
+    public static final int DELAY_REVERB = 1;
+    public static final int PITCH_MODULATION = 2;//octave, chorus, vibrato, flanger, multi overtone, phase shifter, harmonist, tremolo, rotary, slicer
+    public static final int DYNAMICS_FILTER = 3;//equalizer, compressor, dynamic wah
+    public static final int ACOUSTIC = 4;
+    public static final int BASS_PEDALS = 5;
+    public static final int SERIES_20 = 6;
+    public static final int SERIES_200 = 7;
+    public static final int SERIES_500 = 8;
+    public static final int OTHERS = 9;//loop station, synthesizer, vocoder, line selector, noise suppressor, tuner
+    public static final int WAZA_CRAFT = 10;
+
     /**
      * Имя (Distortion)
      */
-    private String name;
+    private final String name;
     /**
      * Короткое имя (DS-1)
      */
-    private String shortName;
+    private final String shortName;
     /**
      * Ссылка на картинку
      */
-    private int image;
+    private final int image;
     /**
      * Ссылка на картинку
      */
@@ -24,11 +36,11 @@ class Pedal {
     /**
      * Год начала продаж
      */
-    private int yearStart;
+    private final int yearStart;
     /**
      * Год окончания продаж, если = 0, значит ещё продается
      */
-    private int yearEnd;
+    private final int yearEnd;
     /**
      * моё отношение: хочу купить, есть такая, не нужна, хочу такую, но дорого, есть более лучшая (не всегда более новая) версия, не знаю зачем и т.д. Будет задаваться static final String
      */
@@ -37,14 +49,6 @@ class Pedal {
      * Описание
      */
     private String description;
-
-    public Pedal(String name, String shortName, int image, int yearStart, int yearEnd) {
-        this.name = name;
-        this.shortName = shortName;
-        this.image = image;
-        this.yearStart = yearStart;
-        this.yearEnd = yearEnd;
-    }
 
     public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd) {
         this.name = name;

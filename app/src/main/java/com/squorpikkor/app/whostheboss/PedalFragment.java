@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class PedalFragment extends Fragment {
+public class
+PedalFragment extends Fragment {
 
 //    int position;
     View view;
@@ -37,8 +39,12 @@ public class PedalFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        ViewPager pager=(ViewPager)view.findViewById(R.id.pager);
+        pager.setAdapter(new Pager(getParentFragmentManager()));
+        
         MainViewModel model = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
-        Pedal pedal = model.getPedal(model.getPosition());
+        Pedal pedal = model.getPedal();
         nameView.setText(pedal.getName());
         shortNameView.setText(pedal.getShortName());
         imageView.setImageResource(pedal.getImage());

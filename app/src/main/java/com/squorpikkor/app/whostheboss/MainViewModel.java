@@ -166,4 +166,8 @@ public class MainViewModel extends ViewModel {
     public Pedal getPedal(int position) {
         return pedalList.getValue().get(position);
     }
+
+    public Pedal getPedal() {
+        return pedalList.getValue().get(position);
+    }
 }
