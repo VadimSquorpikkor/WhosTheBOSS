@@ -16,7 +16,8 @@ import android.widget.TextView;
 public class
 PedalFragment extends Fragment {
 
-//    int position;
+    private static final String POSITION = "position";
+    int position;
     View view;
     TextView nameView;
     TextView shortNameView;
@@ -26,6 +27,22 @@ PedalFragment extends Fragment {
     /*public PedalFragment() {
         this.position = position;
     }*/
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param position Parameter 1.
+     * @return A new instance of fragment PedalFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static PedalFragment newInstance(int position) {
+        PedalFragment fragment = new PedalFragment();
+        Bundle args = new Bundle();
+        args.putInt(POSITION, position);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -40,11 +57,13 @@ PedalFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ViewPager pager=(ViewPager)view.findViewById(R.id.pager);
-        pager.setAdapter(new Pager(getParentFragmentManager()));
+        position = getArguments().getInt(POSITION);
+
+//        ViewPager pager=(ViewPager)view.findViewById(R.id.pager);
+//        pager.setAdapter(new Pager(getParentFragmentManager()));
         
         MainViewModel model = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
-        Pedal pedal = model.getPedal();
+        Pedal pedal = model.getPedal(position);
         nameView.setText(pedal.getName());
         shortNameView.setText(pedal.getShortName());
         imageView.setImageResource(pedal.getImage());

@@ -7,18 +7,21 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 
 class Pager extends FragmentStatePagerAdapter {
 
-    public Pager(@NonNull FragmentManager fm) {
+    private int size;
+
+    public Pager(@NonNull FragmentManager fm, int size) {
         super(fm);
+        this.size = size;
     }
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        return null;
+        return PedalFragment.newInstance(position);
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return size;
     }
 }
