@@ -3,7 +3,11 @@ package com.squorpikkor.app.whostheboss;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+
+import static com.squorpikkor.app.whostheboss.Pedal.DELAY_REVERB;
+import static com.squorpikkor.app.whostheboss.Pedal.DISTORTION_OVERDRIVE;
 
 public class MainViewModel extends ViewModel {
 
@@ -15,6 +19,18 @@ public class MainViewModel extends ViewModel {
         return position;
     }
 
+    public ArrayList<Pedal> getPedalListByCategory(ArrayList<Integer> catList) {
+        ArrayList<Pedal> list = new ArrayList<>();
+        for (Pedal pedal:getAll()) {
+            for (Integer cat:catList) {
+                if (cat == pedal.getCategory()) {
+                    list.add(pedal);
+                }
+            }
+        }
+        return list;
+    }
+
     public void setPosition(int position) {
         this.position = position;
     }
@@ -22,11 +38,23 @@ public class MainViewModel extends ViewModel {
     public MutableLiveData<ArrayList<Pedal>> getPedalList() {
         if (pedalList == null) {
             pedalList = new MutableLiveData<>();
-            loadList();
+            pedalList.setValue(getAll());
         }
         return pedalList;
     }
-    private void loadList() {
+
+    public MutableLiveData<ArrayList<Pedal>> getPedalListByCategory() {
+        if (pedalList == null) {
+            pedalList = new MutableLiveData<>();
+        }
+        ArrayList<Integer> cats = new ArrayList<>();
+        cats.add(DISTORTION_OVERDRIVE);
+        cats.add(DELAY_REVERB);
+        pedalList.setValue(getPedalListByCategory(cats));
+        return pedalList;
+    }
+
+    private ArrayList<Pedal> getAll() {
         ArrayList<Pedal> list = new ArrayList<>();
         list.add(new Pedal("Over Drive",            "OD-1", R.drawable.od_1,    R.drawable.od_1_small, 1977, 1988));
         list.add(new Pedal("Spectrum",              "SP-1", R.drawable.sp_1,    R.drawable.sp_1_small, 1977, 1981));
@@ -160,7 +188,7 @@ public class MainViewModel extends ViewModel {
         list.add(new Pedal("Loop Station",          "RC-5", R.drawable.rc_5,    R.drawable.rc_5_small, -1, 0));
         list.add(new Pedal("Tone Bender",           "TB-2W", R.drawable.tb_2w,  R.drawable.tb_2w_small, 2021, 0));
 
-        pedalList.setValue(list);
+        return list;
     }
 
     public Pedal getPedal(int position) {

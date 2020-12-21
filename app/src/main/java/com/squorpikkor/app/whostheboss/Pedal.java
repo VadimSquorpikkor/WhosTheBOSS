@@ -50,6 +50,8 @@ class Pedal {
      */
     private String description;
 
+    private int Category;
+
     public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd) {
         this.name = name;
         this.shortName = shortName;
@@ -97,5 +99,9 @@ class Pedal {
 
     public int getSmallImage() {
         return smallImage;
+    }
+
+    public int getCategory() {
+        return Category;
     }
 }
