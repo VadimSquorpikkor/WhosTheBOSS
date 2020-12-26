@@ -1,21 +1,25 @@
 package com.squorpikkor.app.whostheboss;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Педаль эффектов BOSS
  */
 class Pedal {
 
-    public static final int DISTORTION_OVERDRIVE = 0;
-    public static final int DELAY_REVERB = 1;
-    public static final int PITCH_MODULATION = 2;//octave, chorus, vibrato, flanger, multi overtone, phase shifter, harmonist, tremolo, rotary, slicer
-    public static final int DYNAMICS_FILTER = 3;//equalizer, compressor, dynamic wah
-    public static final int ACOUSTIC = 4;
-    public static final int BASS_PEDALS = 5;
-    public static final int SERIES_20 = 6;
-    public static final int SERIES_200 = 7;
-    public static final int SERIES_500 = 8;
-    public static final int OTHERS = 9;//loop station, synthesizer, vocoder, line selector, noise suppressor, tuner
-    public static final int WAZA_CRAFT = 10;
+    public static final int DISTORTION_OVERDRIVE = 1;
+    public static final int DELAY_REVERB = 2;
+    public static final int PITCH_MODULATION = 3;//octave, chorus, vibrato, flanger, multi overtone, phase shifter, harmonist, tremolo, rotary, slicer
+    public static final int DYNAMICS_FILTER = 4;//equalizer, compressor, dynamic wah
+    public static final int ACOUSTIC = 5;
+    public static final int BASS_PEDALS = 6;
+    public static final int SERIES_20 = 7;
+    public static final int SERIES_200 = 8;
+    public static final int SERIES_500 = 9;
+    public static final int OTHERS = 10;//loop station, synthesizer, vocoder, line selector, noise suppressor, tuner
+    public static final int WAZA_CRAFT = 11;
 
     /**
      * Имя (Distortion)
@@ -50,7 +54,7 @@ class Pedal {
      */
     private String description;
 
-    private int Category;
+    private ArrayList<Integer> Category;
 
     public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd) {
         this.name = name;
@@ -59,6 +63,30 @@ class Pedal {
         this.smallImage = smallImage;
         this.yearStart = yearStart;
         this.yearEnd = yearEnd;
+        this.Category = new ArrayList<>();
+    }
+
+    public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int cat1) {
+        this.name = name;
+        this.shortName = shortName;
+        this.image = image;
+        this.smallImage = smallImage;
+        this.yearStart = yearStart;
+        this.yearEnd = yearEnd;
+        this.Category = new ArrayList<>();
+        Category.add(cat1);
+    }
+
+    public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int cat1, int cat2) {
+        this.name = name;
+        this.shortName = shortName;
+        this.image = image;
+        this.smallImage = smallImage;
+        this.yearStart = yearStart;
+        this.yearEnd = yearEnd;
+        this.Category = new ArrayList<>();
+        Category.add(cat1);
+        Category.add(cat2);
     }
 
     public String getStatus() {
@@ -101,7 +129,7 @@ class Pedal {
         return smallImage;
     }
 
-    public int getCategory() {
+    public ArrayList<Integer> getCategory() {
         return Category;
     }
 }

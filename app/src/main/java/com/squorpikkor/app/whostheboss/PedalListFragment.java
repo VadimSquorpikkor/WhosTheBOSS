@@ -15,6 +15,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import static com.squorpikkor.app.whostheboss.MainActivity.TAG;
+import static com.squorpikkor.app.whostheboss.Pedal.DISTORTION_OVERDRIVE;
 
 public class PedalListFragment extends Fragment {
 
@@ -39,12 +40,10 @@ public class PedalListFragment extends Fragment {
         // находим список
         lvMain = view.findViewById(R.id.pedal_list);
 
-        // создаем адаптер//
-//        pedalAdapter = new PedalAdapter(getContext(), R.layout.pedal_list_item, sourceList);
-
         //todo убрать new PedalAdapter — иначе каждый раз будет создаваться объект класса
         mViewModel.getPedalList().observe(requireActivity(), users -> {
             sourceList = users;
+            // создаем адаптер//
             pedalAdapter = new PedalAdapter(getContext(), R.layout.pedal_list_item, sourceList);
             lvMain.setAdapter(pedalAdapter);
         });
@@ -65,19 +64,12 @@ public class PedalListFragment extends Fragment {
 
         });
 
+        view.findViewById(R.id.select).setOnClickListener(view -> {
+            mViewModel.setPedalListByCategory(DISTORTION_OVERDRIVE);
+            lvMain.setAdapter(pedalAdapter);
+        });
+
         return view;
     }
 
-
-    /*@Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-        mViewModel = new ViewModelProvider(this).get(MainViewModel.class);
-
-        mViewModel.getPedalList().observe(requireActivity(), users -> {
-            sourceList = mViewModel.getPedalList().getValue();
-            lvMain.setAdapter(pedalAdapter);
-        });
-    }*/
 }
