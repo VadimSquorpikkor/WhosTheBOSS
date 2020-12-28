@@ -72,7 +72,7 @@ public class MainViewModel extends ViewModel {
         list.add(new Pedal("Phaser",                "PH-1", R.drawable.ph_1,    R.drawable.ph_1_small, 1977, 1981));
         list.add(new Pedal("Graphic Equalizer",     "GE-6", R.drawable.ge_6,    R.drawable.ge_6_small, 1978, 1981));
         list.add(new Pedal("T-Wah",                 "TW-1", R.drawable.tw_1,    R.drawable.tw_1_small, 1978, 1988));
-        list.add(new Pedal("Touch Wah",             "TW-1", R.drawable.no_image, R.drawable.no_image_small, 1978, 1988));
+        list.add(new Pedal("Touch Wah",             "TW-1", R.drawable.tow_1,   R.drawable.tow_1_small,1978, 1988));
         list.add(new Pedal("Distortion",            "DS-1", R.drawable.ds_1,    R.drawable.ds_1_small, 1978, 0, DISTORTION_OVERDRIVE));
         list.add(new Pedal("Compression Sustainer", "CS-1", R.drawable.cs_1,    R.drawable.cs_1_small, 1978, 1982));
         list.add(new Pedal("Noise Gate",            "NF-1", R.drawable.nf_1,    R.drawable.nf_1_small, 1979, 1982));
@@ -108,7 +108,7 @@ public class MainViewModel extends ViewModel {
         list.add(new Pedal("Limiter",               "LM-2", R.drawable.lm_2,    R.drawable.lm_2_small, 1987, 1991));
         list.add(new Pedal("Digital Reverb",        "RV-2", R.drawable.rv_2,    R.drawable.rv_2_small, 1987, 1989));
         list.add(new Pedal("Noise Suppressor",      "NS-2", R.drawable.ns_2,    R.drawable.ns_2_small, 1987, 0));
-        list.add(new Pedal("Digital Pitch Shifter", "PS-2", R.drawable.ps_2, R.drawable.ps_2_small, 1987, 1993));
+        list.add(new Pedal("Digital Pitch Shifter", "PS-2", R.drawable.ps_2,    R.drawable.ps_2_small, 1987, 1993));
         list.add(new Pedal("Digital Metalizer",     "MZ-2", R.drawable.mz_2,    R.drawable.mz_2_small, 1987, 1992, DISTORTION_OVERDRIVE));
         list.add(new Pedal("Digital Dimension",     "DC-3", R.drawable.no_image, R.drawable.no_image_small, 1988, 1992));
         list.add(new Pedal("Digital Space D",       "DC-3", R.drawable.dc_3,    R.drawable.dc_3_small, 1988, 1992));
