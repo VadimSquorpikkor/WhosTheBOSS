@@ -4,7 +4,12 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <LinearLayout
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -17,11 +22,13 @@
             android:layout_weight="1"/>
 
 
-    </LinearLayout>
+    </LinearLayout>-->
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/pedal_list"/>
+        android:id="@+id/pedal_list"
+        android:layout_weight="1"/>
+
 
 </LinearLayout>

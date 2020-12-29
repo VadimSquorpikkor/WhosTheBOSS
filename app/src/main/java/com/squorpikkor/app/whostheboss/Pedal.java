@@ -2,13 +2,16 @@ package com.squorpikkor.app.whostheboss;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Педаль эффектов BOSS
  */
 class Pedal {
 
+    public static final int ALL = 0;
     public static final int DISTORTION_OVERDRIVE = 1;
     public static final int DELAY_REVERB = 2;
     public static final int PITCH_MODULATION = 3;//octave, chorus, vibrato, flanger, multi overtone, phase shifter, harmonist, tremolo, rotary, slicer
@@ -20,6 +23,10 @@ class Pedal {
     public static final int SERIES_500 = 9;
     public static final int OTHERS = 10;//loop station, synthesizer, vocoder, line selector, noise suppressor, tuner
     public static final int WAZA_CRAFT = 11;
+    public static final int AMP_EMULATOR = 12;
+    public static final int CHORUS = 13;
+
+
 
     /**
      * Имя (Distortion)
@@ -87,6 +94,33 @@ class Pedal {
         this.Category = new ArrayList<>();
         Category.add(cat1);
         Category.add(cat2);
+    }
+
+    public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int cat1, int cat2, int cat3) {
+        this.name = name;
+        this.shortName = shortName;
+        this.image = image;
+        this.smallImage = smallImage;
+        this.yearStart = yearStart;
+        this.yearEnd = yearEnd;
+        this.Category = new ArrayList<>();
+        Category.add(cat1);
+        Category.add(cat2);
+        Category.add(cat3);
+    }
+
+    public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int cat1, int cat2, int cat3, int cat4) {
+        this.name = name;
+        this.shortName = shortName;
+        this.image = image;
+        this.smallImage = smallImage;
+        this.yearStart = yearStart;
+        this.yearEnd = yearEnd;
+        this.Category = new ArrayList<>();
+        Category.add(cat1);
+        Category.add(cat2);
+        Category.add(cat3);
+        Category.add(cat4);
     }
 
     public String getStatus() {
