@@ -45,7 +45,7 @@ public class PedalListFragment extends Fragment {
 
     HashMap<String, Integer> catMap;
 
-    //todo переместить в VIEW_MODEL
+    //todo переместить в VIEW_MODEL?
     private void initMap() {
         catMap = new HashMap<>();
         catMap.put("All", ALL);

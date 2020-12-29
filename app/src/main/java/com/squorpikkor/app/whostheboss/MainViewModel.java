@@ -117,7 +117,7 @@ public class MainViewModel extends ViewModel {
         list.add(new Pedal("Noise Suppressor",      "NS-2",     R.drawable.ns_2,    R.drawable.ns_2_small, 1987, 0,     OTHERS));
         list.add(new Pedal("Digital Pitch Shifter", "PS-2",     R.drawable.ps_2,    R.drawable.ps_2_small, 1987, 1993,  PITCH_MODULATION));
         list.add(new Pedal("Digital Metalizer",     "MZ-2",     R.drawable.mz_2,    R.drawable.mz_2_small, 1987, 1992,  CHORUS, DISTORTION_OVERDRIVE, DELAY_REVERB, PITCH_MODULATION));
-        list.add(new Pedal("Digital Dimension",     "DC-3",     R.drawable.no_image,R.drawable.no_image_small, 1988, 1992, CHORUS, PITCH_MODULATION));
+        list.add(new Pedal("Digital Dimension",     "DC-3",     R.drawable.dcc_3,   R.drawable.dcc_3_small,1988, 1992,  CHORUS, PITCH_MODULATION));
         list.add(new Pedal("Digital Space D",       "DC-3",     R.drawable.dc_3,    R.drawable.dc_3_small, 1988, 1992,  CHORUS, PITCH_MODULATION));
         list.add(new Pedal("SUPER Chorus (a/d)",    "CH-1",     R.drawable.ch_1,    R.drawable.ch_1_small, 1989, 0,     CHORUS, PITCH_MODULATION));
         list.add(new Pedal("Enhancer",              "EH-2",     R.drawable.eh_2,    R.drawable.eh_2_small, 1990, 1998,  OTHERS));
