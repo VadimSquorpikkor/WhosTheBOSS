@@ -102,14 +102,7 @@ public class PedalListFragment extends Fragment {
             transaction.addToBackStack(null);
             // Commit the transaction
             transaction.commit();
-
         });
-
-        /*view.findViewById(R.id.select).setOnClickListener(view -> {
-            mViewModel.setPedalListByCategory(DISTORTION_OVERDRIVE);
-            lvMain.setAdapter(pedalAdapter);
-        });*/
-
 
         initMap();
         spinnerList = new String[catMap.size()];
@@ -118,7 +111,6 @@ public class PedalListFragment extends Fragment {
             spinnerList[index] = mapEntry.getKey();
             index++;
         }
-
 
         Spinner spinner = view.findViewById(R.id.spinner);
         // Создаем адаптер ArrayAdapter с помощью массива строк и стандартной разметки элемета spinner
