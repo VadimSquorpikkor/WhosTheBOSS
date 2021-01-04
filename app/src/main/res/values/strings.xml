@@ -5,14 +5,25 @@
 
 
     <!--DESCRIPTIONS-->
-    <string name="od_1">qwe</string>
+
     <string name="oc_20g">\t\tThe OC-20G Poly Octave produces octaves for various combinations of
         strings (like the 5th and 6th strings) while leaving the other four strings unprocessed,
         making it the ultimate octave pedal for use with GK-ready guitars.\n
-        \t\t- World’s first polyphonic octave pedal for use with GK-equipped guitars\n
-        \t\t- Octaves can be assigned to different strings for simulated guitar/bass combos\n
-        \t\t- Onboard electric and acoustic guitar simulations, plus Distortion effect\n
-        \t\t- Accommodates playing chords while using octaves\n
-        \t\t- Rugged, dual-pedal design with simple, knob-based controls\n
-        \t\t- *Note that optional GK-2AH pickup or equivalent required for use.</string>
+        \t\t - World’s first polyphonic octave pedal for use with GK-equipped guitars\n
+        \t\t - Octaves can be assigned to different strings for simulated guitar/bass combos\n
+        \t\t - Onboard electric and acoustic guitar simulations, plus Distortion effect\n
+        \t\t - Accommodates playing chords while using octaves\n
+        \t\t - Rugged, dual-pedal design with simple, knob-based controls\n
+        \t\t - *Note that optional GK-2AH pickup or equivalent required for use.</string>
+    <string name="ce_20">\t\t- The CE-20 Chorus Ensemble is the culmination of over 25 years of BOSS
+        chorus experience. This programmable chorus pedal not only models classics like the CE-1 and
+        SDD-320, but creates entirely new Effects including chorus for bass and acoustic guitar.
+        New "Brilliance" and "Ambience" knobs offer unprecedented realtime control over the chorus
+        tone-making the CE-20 a pedal no guitarist should be without.
+        \t\t - BOSS\' finest Chorus Effects ever offered in a compact pedal
+        \t\t - 6 chorus modes: Rich, Bass, Acoustic, Standard, CE-1 and Dimensional D
+        \t\t - Brilliance parameter adjusts "sparkling" feel of chorus
+        \t\t - Ambience control adds Reverb to chorus for greater spaciousness
+        \t\t - 4 User memories plus manual mode; stores all knob settings
+        \t\t - Stereo In/Out and Headphone Output</string>
 </resources>

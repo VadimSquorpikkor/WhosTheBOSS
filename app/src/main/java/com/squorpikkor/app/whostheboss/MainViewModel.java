@@ -75,7 +75,7 @@ public class MainViewModel extends ViewModel {
 
     private ArrayList<Pedal> getAll() {
         ArrayList<Pedal> list = new ArrayList<>();
-        list.add(new Pedal("Over Drive",            "OD-1",     R.drawable.od_1,    R.drawable.od_1_small, 1977, 1988,  R.string.od_1, DISTORTION_OVERDRIVE));
+        list.add(new Pedal("Over Drive",            "OD-1",     R.drawable.od_1,    R.drawable.od_1_small, 1977, 1988,  0,  DISTORTION_OVERDRIVE));
         list.add(new Pedal("Spectrum",              "SP-1",     R.drawable.sp_1,    R.drawable.sp_1_small, 1977, 1981,  0,  PITCH_MODULATION));
         list.add(new Pedal("Phaser",                "PH-1",     R.drawable.ph_1,    R.drawable.ph_1_small, 1977, 1981,  0,  PITCH_MODULATION));
         list.add(new Pedal("Graphic Equalizer",     "GE-6",     R.drawable.ge_6,    R.drawable.ge_6_small, 1978, 1981,  0,  DYNAMICS_FILTER));
@@ -206,22 +206,22 @@ public class MainViewModel extends ViewModel {
         list.add(new Pedal("Loop Station",          "RC-5",     R.drawable.rc_5,    R.drawable.rc_5_small, -1, 0,       0,  OTHERS));
         list.add(new Pedal("Tone Bender",           "TB-2W",    R.drawable.tb_2w,   R.drawable.tb_2w_small, 2021, 0,    0,  DISTORTION_OVERDRIVE, WAZA_CRAFT));
         //20 Series
-        list.add(new Pedal("Chorus Ensemble",       "CE-20",    R.drawable.ce_20,   R.drawable.ce_20_small,       -1, 0,      0, SERIES_20, CHORUS, PITCH_MODULATION));
-        list.add(new Pedal("Giga Delay",            "DD-20",    R.drawable.dd_20,   R.drawable.dd_20_small,       -1, 0,      0, SERIES_20, DELAY_REVERB));
-        list.add(new Pedal("Advanced EQ",           "EQ-20",    R.drawable.eq_20,   R.drawable.eq_20_small,       -1, 0,      0, SERIES_20, DYNAMICS_FILTER));
-        list.add(new Pedal("Amp Factory",           "GP-20",    R.drawable.gp_20,   R.drawable.gp_20_small,       -1, 0,      0, SERIES_20, AMP_EMULATOR));
-        list.add(new Pedal("Poly Octave",           "OC-20G",   R.drawable.oc_20g,  R.drawable.oc_20g_small,      -1, 0,      R.string.oc_20g, SERIES_20, PITCH_MODULATION));
-        list.add(new Pedal("Drive Zone",            "OD-20",    R.drawable.od_20,   R.drawable.od_20_small,       -1, 0,      0, SERIES_20, DISTORTION_OVERDRIVE));
-        list.add(new Pedal("Loop Station",          "RC-20",    R.drawable.rc_20,   R.drawable.rc_20_small,       -1, 0,      0, SERIES_20, OTHERS));
-        list.add(new Pedal("Loop Station",          "RC-20XL",  R.drawable.rc_20xl, R.drawable.rc_20xl_small,     -1, 0,      0, SERIES_20, OTHERS));
-        list.add(new Pedal("Loop Station",          "RC-30",    R.drawable.rc_30,   R.drawable.rc_30_small,       -1, 0,      0, SERIES_20, OTHERS));
-        list.add(new Pedal("Space Echo",            "RE-20",    R.drawable.re_20,   R.drawable.re_20_small,       -1, 0,      0, SERIES_20, DELAY_REVERB));
-        list.add(new Pedal("Rotary Ensemble",       "RT-20",    R.drawable.rt_20,   R.drawable.rt_20_small,       -1, 0,      0, SERIES_20, PITCH_MODULATION));
-        list.add(new Pedal("Slicer",                "SL-20",    R.drawable.sl_20,   R.drawable.sl_20_small,       -1, 0,      0, SERIES_20, OTHERS));
-        list.add(new Pedal("Vocal Performer",       "VE-20",    R.drawable.ve_20,   R.drawable.ve_20_small,       -1, 0,      0, SERIES_20, OTHERS));
-        list.add(new Pedal("Wave Processor",        "WP-20G",   R.drawable.wp20g,   R.drawable.wp20g_small,       -1, 0,      0, SERIES_20, OTHERS));
-        list.add(new Pedal("V-Guitar Distortion",   "GR-D",     R.drawable.gr_d,    R.drawable.gr_d_small,        -1, 0,      0, SERIES_20, OTHERS));
-        list.add(new Pedal("V-Guitar Space",        "GR-S",     R.drawable.gr_s,    R.drawable.gr_s_small,        -1, 0,      0, SERIES_20, OTHERS));
+        list.add(new Pedal("Chorus Ensemble",       "CE-20",    R.drawable.ce_20,   R.drawable.ce_20_small, -1, -1,      R.string.ce_20, SERIES_20, CHORUS, PITCH_MODULATION));
+        list.add(new Pedal("Giga Delay",            "DD-20",    R.drawable.dd_20,   R.drawable.dd_20_small, -1, -1,      0, SERIES_20, DELAY_REVERB));
+        list.add(new Pedal("Advanced EQ",           "EQ-20",    R.drawable.eq_20,   R.drawable.eq_20_small, -1, -1,      0, SERIES_20, DYNAMICS_FILTER));
+        list.add(new Pedal("Amp Factory",           "GP-20",    R.drawable.gp_20,   R.drawable.gp_20_small, -1, -1,      0, SERIES_20, AMP_EMULATOR));
+        list.add(new Pedal("Poly Octave",           "OC-20G",   R.drawable.oc_20g,  R.drawable.oc_20g_small,-1, -1,      R.string.oc_20g, SERIES_20, PITCH_MODULATION));
+        list.add(new Pedal("Drive Zone",            "OD-20",    R.drawable.od_20,   R.drawable.od_20_small, -1, -1,      0, SERIES_20, DISTORTION_OVERDRIVE));
+        list.add(new Pedal("Loop Station",          "RC-20",    R.drawable.rc_20,   R.drawable.rc_20_small, -1, -1,      0, SERIES_20, OTHERS));
+        list.add(new Pedal("Loop Station",          "RC-20XL",  R.drawable.rc_20xl, R.drawable.rc_20xl_small,-1,-1,      0, SERIES_20, OTHERS));
+        list.add(new Pedal("Loop Station",          "RC-30",    R.drawable.rc_30,   R.drawable.rc_30_small, -1, 0,      0, SERIES_20, OTHERS));
+        list.add(new Pedal("Space Echo",            "RE-20",    R.drawable.re_20,   R.drawable.re_20_small, -1, 0,      0, SERIES_20, DELAY_REVERB));
+        list.add(new Pedal("Rotary Ensemble",       "RT-20",    R.drawable.rt_20,   R.drawable.rt_20_small, -1, 0,      0, SERIES_20, PITCH_MODULATION));
+        list.add(new Pedal("Slicer",                "SL-20",    R.drawable.sl_20,   R.drawable.sl_20_small, -1, 0,      0, SERIES_20, OTHERS));
+        list.add(new Pedal("Vocal Performer",       "VE-20",    R.drawable.ve_20,   R.drawable.ve_20_small, -1, 0,      0, SERIES_20, OTHERS));
+        list.add(new Pedal("Wave Processor",        "WP-20G",   R.drawable.wp20g,   R.drawable.wp20g_small, -1, -1,      0, SERIES_20, OTHERS));
+        list.add(new Pedal("V-Guitar Distortion",   "GR-D",     R.drawable.gr_d,    R.drawable.gr_d_small,  -1, -1,      0, SERIES_20, OTHERS));
+        list.add(new Pedal("V-Guitar Space",        "GR-S",     R.drawable.gr_s,    R.drawable.gr_s_small,  -1, -1,      0, SERIES_20, OTHERS));
 
         return list;
     }
