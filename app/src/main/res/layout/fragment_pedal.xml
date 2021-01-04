@@ -1,36 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
-        style="@style/medium_text"
-        android:text="Distortion"
         android:id="@+id/name"
-        />
+        style="@style/medium_text"
+        android:text="Distortion" />
 
     <TextView
+        android:id="@+id/short_name"
         style="@style/large_text"
-        android:text="DS-1"
-        android:id="@+id/short_name"/>
+        android:text="DS-1" />
 
     <ImageView
-        android:padding="10dp"
-        android:layout_weight="1"
-        style="@style/base_style"
         android:id="@+id/image"
+        style="@style/base_style"
         android:layout_height="0dp"
-        android:src="@drawable/ds_1"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:src="@drawable/ds_1" />
+
+    <TextView
+        android:id="@+id/description_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show description"
+        android:gravity="center"
+        android:background="#000000"
         />
+
+    <LinearLayout
+        android:id="@+id/description_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:textSize="12sp"
+                android:padding="10dp"
+                android:id="@+id/description_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </ScrollView>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/years"
-        android:layout_height="wrap_content"
         style="@style/small_text"
-        android:text="1978 - now"
+        android:layout_height="wrap_content"
         android:background="#000000"
-        />
+        android:text="1978 - now" />
 </LinearLayout>

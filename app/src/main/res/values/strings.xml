@@ -5,13 +5,14 @@
 
 
     <!--DESCRIPTIONS-->
-    <string name="oc_20g">The OC-20G Poly Octave produces octaves for various combinations of
+    <string name="od_1">qwe</string>
+    <string name="oc_20g">\t\tThe OC-20G Poly Octave produces octaves for various combinations of
         strings (like the 5th and 6th strings) while leaving the other four strings unprocessed,
-        making it the ultimate octave pedal for use with GK-ready guitars./n
-        - World’s first polyphonic octave pedal for use with GK-equipped guitars/n
-        - Octaves can be assigned to different strings for simulated guitar/bass combos/n
-        - Onboard electric and acoustic guitar simulations, plus Distortion effect/n
-        - Accommodates playing chords while using octaves/n
-        - Rugged, dual-pedal design with simple, knob-based controls/n
-        - *Note that optional GK-2AH pickup or equivalent required for use.</string>
+        making it the ultimate octave pedal for use with GK-ready guitars.\n
+        \t\t- World’s first polyphonic octave pedal for use with GK-equipped guitars\n
+        \t\t- Octaves can be assigned to different strings for simulated guitar/bass combos\n
+        \t\t- Onboard electric and acoustic guitar simulations, plus Distortion effect\n
+        \t\t- Accommodates playing chords while using octaves\n
+        \t\t- Rugged, dual-pedal design with simple, knob-based controls\n
+        \t\t- *Note that optional GK-2AH pickup or equivalent required for use.</string>
 </resources>

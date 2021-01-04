@@ -43,7 +43,7 @@ class Pedal {
     /**
      * Ссылка на картинку
      */
-    private int smallImage;
+    private final int smallImage;
     /**
      * Год начала продаж
      */
@@ -59,21 +59,12 @@ class Pedal {
     /**
      * Описание
      */
-    private String description;
+    private int description;
 
     private ArrayList<Integer> Category;
 
-    public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd) {
-        this.name = name;
-        this.shortName = shortName;
-        this.image = image;
-        this.smallImage = smallImage;
-        this.yearStart = yearStart;
-        this.yearEnd = yearEnd;
-        this.Category = new ArrayList<>();
-    }
-
-    public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int cat1) {
+    public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int description, int cat1) {
+        this.description = description;
         this.name = name;
         this.shortName = shortName;
         this.image = image;
@@ -84,7 +75,8 @@ class Pedal {
         Category.add(cat1);
     }
 
-    public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int cat1, int cat2) {
+    public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int description, int cat1, int cat2) {
+        this.description = description;
         this.name = name;
         this.shortName = shortName;
         this.image = image;
@@ -96,7 +88,8 @@ class Pedal {
         Category.add(cat2);
     }
 
-    public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int cat1, int cat2, int cat3) {
+    public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int description, int cat1, int cat2, int cat3) {
+        this.description = description;
         this.name = name;
         this.shortName = shortName;
         this.image = image;
@@ -109,7 +102,8 @@ class Pedal {
         Category.add(cat3);
     }
 
-    public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int cat1, int cat2, int cat3, int cat4) {
+    public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int description, int cat1, int cat2, int cat3, int cat4) {
+        this.description = description;
         this.name = name;
         this.shortName = shortName;
         this.image = image;
@@ -131,12 +125,8 @@ class Pedal {
         this.status = status;
     }
 
-    public String getDescription() {
+    public int getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getName() {
