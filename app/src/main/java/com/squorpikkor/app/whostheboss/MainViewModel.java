@@ -13,6 +13,7 @@ import static com.squorpikkor.app.whostheboss.Pedal.DISTORTION_OVERDRIVE;
 import static com.squorpikkor.app.whostheboss.Pedal.DYNAMICS_FILTER;
 import static com.squorpikkor.app.whostheboss.Pedal.OTHERS;
 import static com.squorpikkor.app.whostheboss.Pedal.PITCH_MODULATION;
+import static com.squorpikkor.app.whostheboss.Pedal.SERIES_20;
 import static com.squorpikkor.app.whostheboss.Pedal.WAZA_CRAFT;
 
 public class MainViewModel extends ViewModel {
@@ -204,6 +205,23 @@ public class MainViewModel extends ViewModel {
         list.add(new Pedal("Octaver",               "OC-5",     R.drawable.oc_5,    R.drawable.oc_5_small, -1, 0,       PITCH_MODULATION));
         list.add(new Pedal("Loop Station",          "RC-5",     R.drawable.rc_5,    R.drawable.rc_5_small, -1, 0,       OTHERS));
         list.add(new Pedal("Tone Bender",           "TB-2W",    R.drawable.tb_2w,   R.drawable.tb_2w_small, 2021, 0,    DISTORTION_OVERDRIVE, WAZA_CRAFT));
+        //20 Series
+        list.add(new Pedal("Chorus Ensemble",       "CE-20",    R.drawable.ce_20,   R.drawable.ce_20,       -1, 0,      SERIES_20, CHORUS, PITCH_MODULATION));
+        list.add(new Pedal("Giga Delay",            "DD-20",    R.drawable.dd_20,   R.drawable.dd_20,       -1, 0,      SERIES_20, DELAY_REVERB));
+        list.add(new Pedal("Advanced EQ",           "EQ-20",    R.drawable.eq_20,   R.drawable.eq_20,       -1, 0,      SERIES_20, DYNAMICS_FILTER));
+        list.add(new Pedal("Amp Factory",           "GP-20",    R.drawable.gp_20,   R.drawable.gp_20,       -1, 0,      SERIES_20, AMP_EMULATOR));
+        list.add(new Pedal("Poly Octave",           "OC-20G",   R.drawable.oc_20g,  R.drawable.oc_20g,      -1, 0,      SERIES_20, PITCH_MODULATION));
+        list.add(new Pedal("Drive Zone",            "OD-20",    R.drawable.od_20,   R.drawable.od_20,       -1, 0,      SERIES_20, DISTORTION_OVERDRIVE));
+        list.add(new Pedal("Loop Station",          "RC-20",    R.drawable.rc_20,   R.drawable.rc_20,       -1, 0,      SERIES_20, OTHERS));
+        list.add(new Pedal("Loop Station",          "RC-20XL",  R.drawable.rc_20xl, R.drawable.rc_20xl,     -1, 0,      SERIES_20, OTHERS));
+        list.add(new Pedal("Loop Station",          "RC-30",    R.drawable.rc_30,   R.drawable.rc_30,       -1, 0,      SERIES_20, OTHERS));
+        list.add(new Pedal("Space Echo",            "RE-20",    R.drawable.re_20,   R.drawable.re_20,       -1, 0,      SERIES_20, DELAY_REVERB));
+        list.add(new Pedal("Rotary Ensemble",       "RT-20",    R.drawable.rt_20,   R.drawable.rt_20,       -1, 0,      SERIES_20, PITCH_MODULATION));
+        list.add(new Pedal("Slicer",                "SL-20",    R.drawable.sl_20,   R.drawable.sl_20,       -1, 0,      SERIES_20, OTHERS));
+        list.add(new Pedal("Vocal Performer",       "VE-20",    R.drawable.ve_20,   R.drawable.ve_20,       -1, 0,      SERIES_20, OTHERS));
+        list.add(new Pedal("Wave Processor",        "WP-20G",   R.drawable.wp20g,   R.drawable.wp20g,       -1, 0,      SERIES_20, OTHERS));
+        list.add(new Pedal("V-Guitar Distortion",   "GR-D",     R.drawable.gr_d,    R.drawable.gr_d,        -1, 0,      SERIES_20, OTHERS));
+        list.add(new Pedal("V-Guitar Space",        "GR-S",     R.drawable.gr_s,    R.drawable.gr_s,        -1, 0,      SERIES_20, OTHERS));
 
         return list;
     }

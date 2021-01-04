@@ -2,4 +2,16 @@
     <string name="app_name">Who\'s The BOSS</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!--DESCRIPTIONS-->
+    <string name="oc_20g">The OC-20G Poly Octave produces octaves for various combinations of
+        strings (like the 5th and 6th strings) while leaving the other four strings unprocessed,
+        making it the ultimate octave pedal for use with GK-ready guitars./n
+        - World’s first polyphonic octave pedal for use with GK-equipped guitars/n
+        - Octaves can be assigned to different strings for simulated guitar/bass combos/n
+        - Onboard electric and acoustic guitar simulations, plus Distortion effect/n
+        - Accommodates playing chords while using octaves/n
+        - Rugged, dual-pedal design with simple, knob-based controls/n
+        - *Note that optional GK-2AH pickup or equivalent required for use.</string>
 </resources>

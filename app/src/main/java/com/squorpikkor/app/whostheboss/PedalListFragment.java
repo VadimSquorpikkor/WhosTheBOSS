@@ -55,7 +55,7 @@ public class PedalListFragment extends Fragment {
         catMap.put("Dynamics/Filters", DYNAMICS_FILTER);
         catMap.put("Acoustic", ACOUSTIC);
         catMap.put("Bass pedals", BASS_PEDALS);
-//        catMap.put("20 Series", SERIES_20);
+        catMap.put("20 Series", SERIES_20);
 //        catMap.put("", SERIES_200);
 //        catMap.put("", SERIES_500);
         catMap.put("Amp emulators", AMP_EMULATOR);
