@@ -34,7 +34,6 @@ class PedalAdapter extends ArrayAdapter<Pedal> {
         Pedal pedal = sourceList.get(position);
         ((TextView)view.findViewById(R.id.name)).setText(pedal.getName());
         ((TextView)view.findViewById(R.id.short_name)).setText(pedal.getShortName());
-//        ((ImageView)view.findViewById(R.id.image)).setImageResource(pedal.getSmallImage()==0?pedal.getImage():pedal.getSmallImage());
         ((ImageView)view.findViewById(R.id.image)).setImageResource(pedal.getSmallImage());
 
         return view;

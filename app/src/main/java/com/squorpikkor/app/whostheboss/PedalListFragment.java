@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +17,8 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
-import static com.squorpikkor.app.whostheboss.MainActivity.TAG;
 import static com.squorpikkor.app.whostheboss.Pedal.ACOUSTIC;
 import static com.squorpikkor.app.whostheboss.Pedal.ALL;
 import static com.squorpikkor.app.whostheboss.Pedal.AMP_EMULATOR;
@@ -31,8 +30,6 @@ import static com.squorpikkor.app.whostheboss.Pedal.DYNAMICS_FILTER;
 import static com.squorpikkor.app.whostheboss.Pedal.OTHERS;
 import static com.squorpikkor.app.whostheboss.Pedal.PITCH_MODULATION;
 import static com.squorpikkor.app.whostheboss.Pedal.SERIES_20;
-import static com.squorpikkor.app.whostheboss.Pedal.SERIES_200;
-import static com.squorpikkor.app.whostheboss.Pedal.SERIES_500;
 import static com.squorpikkor.app.whostheboss.Pedal.WAZA_CRAFT;
 
 public class PedalListFragment extends Fragment {
@@ -93,9 +90,8 @@ public class PedalListFragment extends Fragment {
         lvMain.setOnItemClickListener((parent, view1, position, id) -> {
             mViewModel.setPosition(position);
             // Create new fragment and transaction
-//            Fragment newFragment = PedalFragment.newInstance(position);
-            Fragment newFragment = PagerFragment.newInstance(position);
-            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            Fragment newFragment = PagerFragment.newInstance();
+            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
             // Replace whatever is in the fragment_container view with this fragment,
             // and add the transaction to the back stack
             transaction.replace(R.id.fragment_container, newFragment);
@@ -114,7 +110,7 @@ public class PedalListFragment extends Fragment {
 
         Spinner spinner = view.findViewById(R.id.spinner);
         // Создаем адаптер ArrayAdapter с помощью массива строк и стандартной разметки элемета spinner
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, spinnerList);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(Objects.requireNonNull(getContext()), android.R.layout.simple_spinner_item, spinnerList);
         // Определяем разметку для использования при выборе элемента
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Применяем адаптер к элементу spinner
@@ -123,7 +119,6 @@ public class PedalListFragment extends Fragment {
         AdapterView.OnItemSelectedListener itemSelectedListener = new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
                 // Получаем выбранный объект
                 String item = (String)parent.getItemAtPosition(position);
                 mViewModel.setPedalListByCategory(catMap.get(item));

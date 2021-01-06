@@ -29,10 +29,6 @@ PedalFragment extends Fragment {
 
     boolean isShown;
 
-    /*public PedalFragment() {
-        this.position = position;
-    }*/
-
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -65,7 +61,8 @@ PedalFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        position = getArguments().getInt(POSITION);
+        if (getArguments() != null) position = getArguments().getInt(POSITION);
+        else position = 0;
         descView.setVisibility(View.GONE);
 
         MainViewModel model = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
@@ -74,27 +71,26 @@ PedalFragment extends Fragment {
         shortNameView.setText(pedal.getShortName());
         imageView.setImageResource(pedal.getImage());
         yearView.setText(getYears(pedal.getYearStart(), pedal.getYearEnd()));
-        descText.setText(pedal.getDescription()==0?"Empty":getString(pedal.getDescription()));
+        descText.setText(pedal.getDescription() == 0 ? "Empty" : getString(pedal.getDescription()));
         descSwitch.setOnClickListener(view1 -> switchDescription());
     }
 
     private void switchDescription() {
         isShown = !isShown;
-        if (isShown){
+        if (isShown) {
             descView.setVisibility(View.VISIBLE);
-            descSwitch.setText("Hide description");
-        }
-        else {
+            descSwitch.setText(R.string.hide_description);
+        } else {
             descView.setVisibility(View.GONE);
-            descSwitch.setText("Show description");
+            descSwitch.setText(R.string.show_description);
         }
     }
 
     private String getYears(int start, int end) {
-        String s,e;
-        if (start==-1) s = "?";
+        String s, e;
+        if (start == -1) s = "?";
         else s = String.valueOf(start);
-        if (end==-2) return String.valueOf(start);
+        if (end == -2) return String.valueOf(start);
         if (end == 0) e = "now";
         else if (end == -1) e = "Discontinued";
         else e = String.valueOf(end);

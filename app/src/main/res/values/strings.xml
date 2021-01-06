@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Who\'s The BOSS</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hide_description">Hide description</string>
+    <string name="show_description">Show description</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--DESCRIPTIONS-->

@@ -3,6 +3,8 @@ package com.squorpikkor.app.whostheboss;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import java.util.ArrayList;
+import java.util.Objects;
+
 import static com.squorpikkor.app.whostheboss.Pedal.ACOUSTIC;
 import static com.squorpikkor.app.whostheboss.Pedal.ALL;
 import static com.squorpikkor.app.whostheboss.Pedal.AMP_EMULATOR;
@@ -22,29 +24,10 @@ public class MainViewModel extends ViewModel {
 
     private int position;
 
-    public int getPosition() {
-        return position;
-    }
-
-    /*public void setPedalListByCategory(ArrayList<Integer> catList) {
-        MutableLiveData<ArrayList<Pedal>> mlist = new MutableLiveData<>();
-        ArrayList<Pedal> list = new ArrayList<>();
-        for (Pedal pedal:getAll()) {
-            for (Integer cat:catList) {
-                if (cat == pedal.getCategory()) {
-                    list.add(pedal);
-                } *//*else break;*//*
-            }
-        }
-        pedalList.getValue().clear();
-        mlist.setValue(list);
-        pedalList = mlist;
-    }*/
-
     //Выбор устройств по одной категории. У каждого устройттва может быть несколько категорий
     public void setPedalListByCategory(int category) {
         if (category == ALL) {
-            pedalList.getValue().clear();
+            if (pedalList.getValue()!=null) pedalList.getValue().clear();
             pedalList.setValue(getAll());
         } else {
 
@@ -56,13 +39,17 @@ public class MainViewModel extends ViewModel {
                     } /*else break;*/
                 }
             }
-            pedalList.getValue().clear();
+            if (pedalList.getValue()!=null) pedalList.getValue().clear();
             pedalList.setValue(list);
         }
     }
 
     public void setPosition(int position) {
         this.position = position;
+    }
+
+    public int getPosition() {
+        return position;
     }
 
     public MutableLiveData<ArrayList<Pedal>> getPedalList() {
@@ -227,10 +214,7 @@ public class MainViewModel extends ViewModel {
     }
 
     public Pedal getPedal(int position) {
-        return pedalList.getValue().get(position);
+        return Objects.requireNonNull(pedalList.getValue()).get(position);
     }
 
-    public Pedal getPedal() {
-        return pedalList.getValue().get(position);
-    }
 }

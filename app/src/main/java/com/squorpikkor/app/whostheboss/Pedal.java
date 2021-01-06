@@ -1,10 +1,6 @@
 package com.squorpikkor.app.whostheboss;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
 
 /**
  * Педаль эффектов BOSS
@@ -59,9 +55,9 @@ class Pedal {
     /**
      * Описание
      */
-    private int description;
+    private final int description;
 
-    private ArrayList<Integer> Category;
+    private final ArrayList<Integer> Category;
 
     public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int description, int cat1) {
         this.description = description;

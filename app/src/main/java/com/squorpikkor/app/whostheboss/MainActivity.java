@@ -9,7 +9,7 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
 
     public MainViewModel mViewModel;
-    public static final String TAG = "..........";
+//    public static final String TAG = "..........";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

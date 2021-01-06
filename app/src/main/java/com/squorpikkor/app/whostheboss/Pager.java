@@ -7,10 +7,10 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 
 class Pager extends FragmentStatePagerAdapter {
 
-    private int size;
+    private final int size;
 
-    public Pager(@NonNull FragmentManager fm, int size) {
-        super(fm);
+    public Pager(@NonNull FragmentManager fm, int behavior, int size) {
+        super(fm, behavior);
         this.size = size;
     }
 
