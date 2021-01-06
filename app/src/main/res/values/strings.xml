@@ -3,9 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-
     <!--DESCRIPTIONS-->
-
     <string name="oc_20g">\t\tThe OC-20G Poly Octave produces octaves for various combinations of
         strings (like the 5th and 6th strings) while leaving the other four strings unprocessed,
         making it the ultimate octave pedal for use with GK-ready guitars.\n
@@ -15,15 +13,45 @@
         \t\t - Accommodates playing chords while using octaves\n
         \t\t - Rugged, dual-pedal design with simple, knob-based controls\n
         \t\t - *Note that optional GK-2AH pickup or equivalent required for use.</string>
-    <string name="ce_20">\t\t- The CE-20 Chorus Ensemble is the culmination of over 25 years of BOSS
+    <string name="ce_20">\t\t The CE-20 Chorus Ensemble is the culmination of over 25 years of BOSS
         chorus experience. This programmable chorus pedal not only models classics like the CE-1 and
         SDD-320, but creates entirely new Effects including chorus for bass and acoustic guitar.
         New "Brilliance" and "Ambience" knobs offer unprecedented realtime control over the chorus
-        tone-making the CE-20 a pedal no guitarist should be without.
-        \t\t - BOSS\' finest Chorus Effects ever offered in a compact pedal
-        \t\t - 6 chorus modes: Rich, Bass, Acoustic, Standard, CE-1 and Dimensional D
-        \t\t - Brilliance parameter adjusts "sparkling" feel of chorus
-        \t\t - Ambience control adds Reverb to chorus for greater spaciousness
-        \t\t - 4 User memories plus manual mode; stores all knob settings
+        tone-making the CE-20 a pedal no guitarist should be without.\n
+        \t\t - BOSS\' finest Chorus Effects ever offered in a compact pedal\n
+        \t\t - 6 chorus modes: Rich, Bass, Acoustic, Standard, CE-1 and Dimensional D\n
+        \t\t - Brilliance parameter adjusts "sparkling" feel of chorus\n
+        \t\t - Ambience control adds Reverb to chorus for greater spaciousness\n
+        \t\t - 4 User memories plus manual mode; stores all knob settings\n
         \t\t - Stereo In/Out and Headphone Output</string>
+    <string name="rt_20">\t\tSupreme Rotary-Speaker Simulator\n
+        \t\tFrom the Beatles to Jeff Beck, Santana to Stevie Ray, many guitar greats have incorporated
+        the rotary speaker into their rigs. With this in mind BOSS proudly presents the RT-20 Rotary
+        Sound Processor. Employing COSM-modeling technology, the RT-20 authentically reproduces
+        classic rotary-speaker sounds. It offers adjustable Rise Time, Horn and Bass speed,
+        Overdrive, and more. And not just for classic twirl, the RT-20 can be used to create unique
+        overdrive and pulsating effects as well. This pedal sounds amazing, and offers a stunning
+        graphical view of the virtual rotors on its built-in display.\n
+        \t\t - Authentic rotary speaker sounds via COSM technology\n
+        \t\t - Slow/Fast transition time is adjustable from gradual to rapid change; optional Expression pedal can control speed in real time\n
+        \t\t - Onboard Overdrive effects\n
+        \t\t - Adjustable mix balance between Treble Rotor and Bass Rotor\n
+        \t\t - 4 types of sounds, from standard rotary speaker effects to rock-oriented tones, UNI-V, and more\n
+        \t\t - Guitar/Keyboard switch\n
+        \t\t - Dazzling virtual-rotor display\n
+        \t\tConnections\n
+        Guitars and keyboards alike can be plugged into the RT-20; use the Drive Type switch to
+        optimize the effects for guitar or keyboard. Surround your listeners in animated sound with
+        the RT-20’s dual outputs, which enable true stereo effects. Add color by adding an
+        Expression pedal (such as the new BOSS FV-500H/FV-500L, optional), which lets you control
+        parameters such as rotation speed seamlessly from slow to fast in real time. The RT-20’s
+        phone jack is handy for private practice and experimentation.\n
+        \t\tVirtual Rotor Display\n
+        Thanks to its stunning visual display, the RT-20 might be the most eye-catching pedal in
+        BOSS history. The spinning lights don’t just look cool, they also show the audio-rotation
+        characteristics of the RT-20 in real time. The center of the display, illuminated in red
+        light, represents the virtual horn. The outside ring, illuminated in blue, displays the
+        rotation of the virtual bass speaker. It’s attractive and informative!
+</string>
+
 </resources>

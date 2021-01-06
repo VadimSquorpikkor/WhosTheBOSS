@@ -216,7 +216,7 @@ public class MainViewModel extends ViewModel {
         list.add(new Pedal("Loop Station",          "RC-20XL",  R.drawable.rc_20xl, R.drawable.rc_20xl_small,-1,-1,      0, SERIES_20, OTHERS));
         list.add(new Pedal("Loop Station",          "RC-30",    R.drawable.rc_30,   R.drawable.rc_30_small, -1, 0,      0, SERIES_20, OTHERS));
         list.add(new Pedal("Space Echo",            "RE-20",    R.drawable.re_20,   R.drawable.re_20_small, -1, 0,      0, SERIES_20, DELAY_REVERB));
-        list.add(new Pedal("Rotary Ensemble",       "RT-20",    R.drawable.rt_20,   R.drawable.rt_20_small, -1, 0,      0, SERIES_20, PITCH_MODULATION));
+        list.add(new Pedal("Rotary Ensemble",       "RT-20",    R.drawable.rt_20,   R.drawable.rt_20_small, -1, 0,      R.string.rt_20, SERIES_20, PITCH_MODULATION));
         list.add(new Pedal("Slicer",                "SL-20",    R.drawable.sl_20,   R.drawable.sl_20_small, -1, 0,      0, SERIES_20, OTHERS));
         list.add(new Pedal("Vocal Performer",       "VE-20",    R.drawable.ve_20,   R.drawable.ve_20_small, -1, 0,      0, SERIES_20, OTHERS));
         list.add(new Pedal("Wave Processor",        "WP-20G",   R.drawable.wp20g,   R.drawable.wp20g_small, -1, -1,      0, SERIES_20, OTHERS));

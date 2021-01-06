@@ -92,10 +92,11 @@ PedalFragment extends Fragment {
 
     private String getYears(int start, int end) {
         String s,e;
-        if (end==-2) return String.valueOf(start);
         if (start==-1) s = "?";
         else s = String.valueOf(start);
+        if (end==-2) return String.valueOf(start);
         if (end == 0) e = "now";
+        else if (end == -1) e = "Discontinued";
         else e = String.valueOf(end);
         return s + " - " + e;
     }
