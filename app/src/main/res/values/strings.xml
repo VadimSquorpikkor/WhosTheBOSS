@@ -52,7 +52,90 @@
         BOSS history. The spinning lights don’t just look cool, they also show the audio-rotation
         characteristics of the RT-20 in real time. The center of the display, illuminated in red
         light, represents the virtual horn. The outside ring, illuminated in blue, displays the
-        rotation of the virtual bass speaker. It’s attractive and informative!
-</string>
+        rotation of the virtual bass speaker. It’s attractive and informative!</string>
+    <string name="tb_2w">\t\t BOSS and Sola Sound have come together to introduce the TB-2W Tone
+        Bender, an authentic sonic recreation of the iconic Tone Bender MK II fuzz pedal used by
+        some of the greatest guitarists of all time. Heard on legions of classic tracks from the
+        1960s through today, the Tone Bender’s bold, rich voice and smooth sustain are forever
+        embedded in the annals of rock and pop music history.\n
+        \t\t Using a “masterpiece” Tone Bender MK II (serial number 500) from Sola Sound’s archive
+        as a benchmark reference, BOSS engineers have fully realized the pedal’s magical sound and
+        expressive dynamic response through detailed Waza craftsmanship. Available in a limited
+        production run, each TB-2W features rare germanium transistors carefully tested for optimum
+        tone, a three-way voltage selector, selectable true/buffered bypass operation, and a refined
+        circuit design for ultra-consistent performance from pedal to pedal.\n
+        \t\t - Authentic sonic recreation of the legendary Tone Bender MK II fuzz from the 1960s\n
+        \t\t - Three-way voltage selector for shaping the overall tone and response\n
+        \t\t - Selectable true bypass or buffered bypass operation\n
+        \t\t - Limited production run due to component availability\n
+        \t\t - Available in Q2 2021—more details to come</string>
+    <string name="od_1x">\t\t The OD-1X launches the famous BOSS overdrive into a modern era of
+        expression, delivering an unmatched level of performance for guitarists with an ear for
+        tone. This next-generation stomp combines over 35 years of innovation in pedal design with
+        the most advanced technologies, bringing you a completely new tonal experience that’s only
+        possible with the legendary expertise of BOSS. Prepare to be amazed—the inspiring and
+        ultra-responsive OD-1X will change your thinking about overdrive pedals forever.\n
+        \t\t - Special edition BOSS overdrive pedal with next-generation sound, feel, and response\n
+        \t\t - All-new design provides a superior playing experience that’s unattainable with analog overdrive pedals\n
+        \t\t - Powerful real-time processing delivers rich, wide-range sounds with natural compression\n
+        \t\t - Bold, high-definition tone that’s also smooth and refined\n
+        \t\t - Preserves the unique tonal characteristics of different guitars and pickup types\n
+        \t\t - Very low noise, even with high-gain settings\n
+        \t\t - Drive, High, and Low knobs offer a wide range of sound shaping not found in typical stompbox pedals\n
+        \t\t - Striking appearance with exclusive chrome knobs and control plate, plus vintage silver knob for battery compartment access\n
+        \t\t - Features BOSS’ innovative Multi-Dimensional Processing (MDP), realized with proprietary technology and custom DSP\n
+        \t\t - BOSS five-year warranty</string>
+    <string name="mt_2w">\t\t For over 25 years, the MT-2 Metal Zone has been one of the most popular
+        and influential compact pedals in the BOSS lineup, with overall sales that are second only to
+        the venerable DS-1 Distortion. Made in Japan and infused with Waza Craft mojo, the MT-2W takes
+        the iconic stomp to new levels of tonal range and versatility. Standard mode delivers an evolved
+        version of the original mid-focused Metal Zone tone, while Custom mode introduces a fresh,
+        wide-ranging voice that’s perfectly suited for today’s diverse high-gain styles.\n
+        \t\t - Premium Waza Craft pedal with all-analog audio circuitry\n
+        \t\t - Innovative dual-stage gain circuit built with discrete analog components\n
+        \t\t - Standard mode updates the famous MT-2 Metal Zone sound with improved clarity and lower noise\n
+        \t\t - Custom mode delivers full-throttle gain tones with wider range, increased dynamics, and tighter low end\n
+        \t\t - Powerful three-band EQ provides intense sound customization with High, Low, and sweepable Midrange and up to 15 dB boost/cut on each band\n
+        \t\t - Premium buffer for clean and clear tone when bypassed\n
+        \t\t - Made in Japan\n
+        \t\t - BOSS five-year warranty</string>
+    <string name="jb_2">\t\t To celebrate the 40th anniversary of BOSS compact pedals, BOSS and JHS
+        Pedals have come together in a historic creative collaboration between the two industry leaders.
+        Housed in the classic BOSS compact design, the JB-2 Angry Driver pairs the tones of the iconic
+        BOSS BD-2 Blues Driver with JHS Pedals’ popular Angry Charlie. Working closely together, the
+        two pedal innovators have developed an all-new combined circuit with refined sound and performance
+        perfectly tuned for dual-mode drive operation.\n
+        The JB-2 Angry Driver features three dual-concentric knobs that provide independent drive,
+        tone, and level control for each overdrive type. Via a six-position mode selector, you can
+        use each overdrive independently, or combine them together in series and parallel configurations.
+        With the ability to blend the Blues Driver’s famously expressive low-to-mid gain tones with
+        the Angry Charlie’s aggressive rock voice in any combination, the JB-2 Angry Driver delivers
+        unmatched range and versatility from a single overdrive pedal.\n
+        \t\t - All-new overdrive pedal with massive tonal range, jointly developed by BOSS and JHS Pedals\n
+        \t\t - Combines the voices of the BD-2 Blues Driver from BOSS and Angry Charlie from JHS Pedals\n
+        \t\t - Three dual-concentric knobs provide independent drive, tone, and level control for each overdrive type\n
+        \t\t - Mode selector for choosing individual overdrive types, two series connections for stacking, or parallel connection for unique new sounds\n
+        \t\t - Also includes a mode for toggling between BOSS and JHS overdrives with the built-in pedal switch\n
+        \t\t - Remote switch jack for controlling pedal modes and bypass from an optional footswitch or effects switching system\n
+        \t\t - Multi-color LED indicator shows BOSS mode (blue), JHS mode (red), and both together (purple)\n
+        \t\t - BOSS five-year warranty</string>
+    <string name="bd_2w">\t\t Responsiveness Outshined With a Modernized Vintage Vibe\n
+        \t\t Passionately designed by the master engineers at BOSS in Japan, the Waza Craft BD-2W delivers a premium stomp experience that fans of customized pedal tone will love. Crafted with an ear for highly refined sound, the BD-2W takes the classic Blues Driver grit to a new level with all-discrete analog circuitry. Standard mode captures the classic BD-2 tone while Custom mode delivers new body and sustain.\n
+        \t\t - Special edition Waza Craft pedal delivers the ultimate BOSS tone experience\n
+        \t\t - Premium sound based on the classic BD-2 Blues Driver\n
+        \t\t - Newly revised, all-analog discrete amplifier circuit\n
+        \t\t - Standard and Custom sound modes\n
+        \t\t - Highly responsive to picking dynamics and volume changes\n
+        \t\t - BOSS five-year warranty</string>
+    <string name="sd_1w">\t\t The Sweet Overdrive Tone Has a Prime Redesign\n
+        \t\t Passionately designed by the master engineers at BOSS in Japan, the Waza Craft SD-1W Super Overdrive delivers a premium stomp experience that fans of customized pedal tone will love. Crafted with an ear for highly refined sound, the SD-1W hot rods the famous BOSS overdrive with all-discrete analog circuitry. Standard mode captures the classic SD-1 sound while Custom mode offers new tonal range and gain.\n
+        \t\t - Special edition Waza Craft pedal delivers the ultimate BOSS tone experience\n
+        \t\t - Premium sound based on the legendary SD-1 Super Overdrive\n
+        \t\t - Newly revised, all-analog discrete amplifier circuit\n
+        \t\t - Standard and Custom sound modes\n
+        \t\t - Highly responsive to picking dynamics and volume changes\n
+        \t\t - BOSS five-year warranty</string>
+    <string name="template">\t\t \n
+        \t\t - </string>
 
 </resources>

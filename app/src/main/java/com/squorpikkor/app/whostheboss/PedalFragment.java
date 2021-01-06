@@ -73,6 +73,11 @@ PedalFragment extends Fragment {
         yearView.setText(getYears(pedal.getYearStart(), pedal.getYearEnd()));
         descText.setText(pedal.getDescription() == 0 ? "Empty" : getString(pedal.getDescription()));
         descSwitch.setOnClickListener(view1 -> switchDescription());
+        if (pedal.getDescription() == 0) {
+            descText.setVisibility(View.GONE);
+            descView.setVisibility(View.GONE);
+            descSwitch.setVisibility(View.GONE);
+        }
     }
 
     private void switchDescription() {

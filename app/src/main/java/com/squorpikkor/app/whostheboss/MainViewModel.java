@@ -166,10 +166,10 @@ public class MainViewModel extends ViewModel {
         list.add(new Pedal("Tera Echo",             "TE-2",     R.drawable.te_2,    R.drawable.te_2_small, 2013, 0,     0,  DELAY_REVERB));
         list.add(new Pedal("Adaptive Distortion",   "DA-2",     R.drawable.da_2,    R.drawable.da_2_small, 2013, 2014,  0,  DISTORTION_OVERDRIVE));
         list.add(new Pedal("Multi Overtone",        "MO-2",     R.drawable.mo_2,    R.drawable.mo_2_small, 2013, 0,     0,  PITCH_MODULATION));
-        list.add(new Pedal("OverDrive",             "OD-1X",    R.drawable.odx_1,   R.drawable.odx_1_small,2014, 0,     0,  DISTORTION_OVERDRIVE));
+        list.add(new Pedal("OverDrive",             "OD-1X",    R.drawable.odx_1,   R.drawable.odx_1_small,2014, 0,     R.string.od_1x,  DISTORTION_OVERDRIVE));
         list.add(new Pedal("Distortion",            "DS-1X",    R.drawable.dsx_1,   R.drawable.dsx_1_small,2014, 0,     0,  DISTORTION_OVERDRIVE));
-        list.add(new Pedal("Blues Driver",          "BD-2W",    R.drawable.bdw_2,   R.drawable.bdw_2_small,2014, 0,     0,  DISTORTION_OVERDRIVE, WAZA_CRAFT));
-        list.add(new Pedal("SUPER OverDrive",       "SD-1W",    R.drawable.sdw_1,   R.drawable.sdw_1_small,2014, 0,     0,  DISTORTION_OVERDRIVE, WAZA_CRAFT));
+        list.add(new Pedal("Blues Driver",          "BD-2W",    R.drawable.bdw_2,   R.drawable.bdw_2_small,2014, 0,     R.string.bd_2w,  DISTORTION_OVERDRIVE, WAZA_CRAFT));
+        list.add(new Pedal("SUPER OverDrive",       "SD-1W",    R.drawable.sdw_1,   R.drawable.sdw_1_small,2014, 0,     R.string.sd_1w,  DISTORTION_OVERDRIVE, WAZA_CRAFT));
         list.add(new Pedal("Loop Station",          "RC-1",     R.drawable.rc_1,    R.drawable.rc_1_small, 2014, 0,     0,  OTHERS));
         list.add(new Pedal("Delay",                 "DM-2W",    R.drawable.dmw_2,   R.drawable.dmw_2_small,2015, 0,     0,  WAZA_CRAFT, DELAY_REVERB));
         list.add(new Pedal("Bass Driver",           "BB-1X",    R.drawable.bbx_1,   R.drawable.bbx_1_small,2015, 0,     0,  BASS_PEDALS));
@@ -183,15 +183,15 @@ public class MainViewModel extends ViewModel {
         list.add(new Pedal("Acoustic Preamp",       "AD-2",     R.drawable.ad_2,    R.drawable.ad_2_small, 2016, 0,     0,  ACOUSTIC));
         list.add(new Pedal("Compressor",            "CP-1X",    R.drawable.cpx_1,   R.drawable.cpx_1_small,2016, 0,     0,  DYNAMICS_FILTER));
         list.add(new Pedal("Distortion",            "DS-1, 4A", R.drawable.dsa_1,   R.drawable.dsa_1_small,2017, -2,    0,  DISTORTION_OVERDRIVE));
-        list.add(new Pedal("Angry Driver",          "JB-2",     R.drawable.jb_1,    R.drawable.jb_1_small, 2017, 0,     0,  DISTORTION_OVERDRIVE));
-        list.add(new Pedal("Metal Zone",            "MT-2W",    R.drawable.mt_2w,   R.drawable.mt_2w_small,-1, 0,       0,  DISTORTION_OVERDRIVE, WAZA_CRAFT));
+        list.add(new Pedal("Angry Driver",          "JB-2",     R.drawable.jb_1,    R.drawable.jb_1_small, 2017, 0,     R.string.jb_2,  DISTORTION_OVERDRIVE));
+        list.add(new Pedal("Metal Zone",            "MT-2W",    R.drawable.mt_2w,   R.drawable.mt_2w_small,-1, 0,       R.string.mt_2w,  DISTORTION_OVERDRIVE, WAZA_CRAFT));
         list.add(new Pedal("Digital Delay",         "DD-8",     R.drawable.dd_8,    R.drawable.dd_8_small, -1, 0,       0,  DELAY_REVERB));
         list.add(new Pedal("Digital Delay",         "DD-3T",    R.drawable.dd_3t,   R.drawable.dd_3t_small,-1, 0,       0,  DELAY_REVERB));
         list.add(new Pedal("Dimension C",           "DC-2W",    R.drawable.dc_2w,   R.drawable.dc_2w_small,-1, 0,       0,  CHORUS, PITCH_MODULATION, WAZA_CRAFT));
         list.add(new Pedal("Synthesizer",           "SY-1",     R.drawable.sy_1,    R.drawable.sy_1_small, -1, 0,       0,  OTHERS));
         list.add(new Pedal("Octaver",               "OC-5",     R.drawable.oc_5,    R.drawable.oc_5_small, -1, 0,       0,  PITCH_MODULATION));
         list.add(new Pedal("Loop Station",          "RC-5",     R.drawable.rc_5,    R.drawable.rc_5_small, -1, 0,       0,  OTHERS));
-        list.add(new Pedal("Tone Bender",           "TB-2W",    R.drawable.tb_2w,   R.drawable.tb_2w_small, 2021, 0,    0,  DISTORTION_OVERDRIVE, WAZA_CRAFT));
+        list.add(new Pedal("Tone Bender",           "TB-2W",    R.drawable.tb_2w,   R.drawable.tb_2w_small, 2021, 0,    R.string.tb_2w,  DISTORTION_OVERDRIVE, WAZA_CRAFT));
         //20 Series
         list.add(new Pedal("Chorus Ensemble",       "CE-20",    R.drawable.ce_20,   R.drawable.ce_20_small, -1, -1,      R.string.ce_20, SERIES_20, CHORUS, PITCH_MODULATION));
         list.add(new Pedal("Giga Delay",            "DD-20",    R.drawable.dd_20,   R.drawable.dd_20_small, -1, -1,      0, SERIES_20, DELAY_REVERB));
