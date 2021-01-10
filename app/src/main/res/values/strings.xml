@@ -5,20 +5,14 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--DESCRIPTIONS-->
-    <string name="oc_20g">\t\tThe OC-20G Poly Octave produces octaves for various combinations of
-        strings (like the 5th and 6th strings) while leaving the other four strings unprocessed,
-        making it the ultimate octave pedal for use with GK-ready guitars.\n
+    <string name="oc_20g">\t\tThe OC-20G Poly Octave produces octaves for various combinations of strings (like the 5th and 6th strings) while leaving the other four strings unprocessed, making it the ultimate octave pedal for use with GK-ready guitars.\n
         \t\t - World’s first polyphonic octave pedal for use with GK-equipped guitars\n
         \t\t - Octaves can be assigned to different strings for simulated guitar/bass combos\n
         \t\t - Onboard electric and acoustic guitar simulations, plus Distortion effect\n
         \t\t - Accommodates playing chords while using octaves\n
         \t\t - Rugged, dual-pedal design with simple, knob-based controls\n
         \t\t - *Note that optional GK-2AH pickup or equivalent required for use.</string>
-    <string name="ce_20">\t\t The CE-20 Chorus Ensemble is the culmination of over 25 years of BOSS
-        chorus experience. This programmable chorus pedal not only models classics like the CE-1 and
-        SDD-320, but creates entirely new Effects including chorus for bass and acoustic guitar.
-        New "Brilliance" and "Ambience" knobs offer unprecedented realtime control over the chorus
-        tone-making the CE-20 a pedal no guitarist should be without.\n
+    <string name="ce_20">\t\t The CE-20 Chorus Ensemble is the culmination of over 25 years of BOSSchorus experience. This programmable chorus pedal not only models classics like the CE-1 and SDD-320, but creates entirely new Effects including chorus for bass and acoustic guitar. New "Brilliance" and "Ambience" knobs offer unprecedented realtime control over the chorus tone-making the CE-20 a pedal no guitarist should be without.\n
         \t\t - BOSS\' finest Chorus Effects ever offered in a compact pedal\n
         \t\t - 6 chorus modes: Rich, Bass, Acoustic, Standard, CE-1 and Dimensional D\n
         \t\t - Brilliance parameter adjusts "sparkling" feel of chorus\n
@@ -26,13 +20,7 @@
         \t\t - 4 User memories plus manual mode; stores all knob settings\n
         \t\t - Stereo In/Out and Headphone Output</string>
     <string name="rt_20">\t\tSupreme Rotary-Speaker Simulator\n
-        \t\tFrom the Beatles to Jeff Beck, Santana to Stevie Ray, many guitar greats have incorporated
-        the rotary speaker into their rigs. With this in mind BOSS proudly presents the RT-20 Rotary
-        Sound Processor. Employing COSM-modeling technology, the RT-20 authentically reproduces
-        classic rotary-speaker sounds. It offers adjustable Rise Time, Horn and Bass speed,
-        Overdrive, and more. And not just for classic twirl, the RT-20 can be used to create unique
-        overdrive and pulsating effects as well. This pedal sounds amazing, and offers a stunning
-        graphical view of the virtual rotors on its built-in display.\n
+        \t\tFrom the Beatles to Jeff Beck, Santana to Stevie Ray, many guitar greats have incorporated the rotary speaker into their rigs. With this in mind BOSS proudly presents the RT-20 Rotary Sound Processor. Employing COSM-modeling technology, the RT-20 authentically reproduces classic rotary-speaker sounds. It offers adjustable Rise Time, Horn and Bass speed, Overdrive, and more. And not just for classic twirl, the RT-20 can be used to create unique overdrive and pulsating effects as well. This pedal sounds amazing, and offers a stunning graphical view of the virtual rotors on its built-in display.\n
         \t\t - Authentic rotary speaker sounds via COSM technology\n
         \t\t - Slow/Fast transition time is adjustable from gradual to rapid change; optional Expression pedal can control speed in real time\n
         \t\t - Onboard Overdrive effects\n
@@ -41,40 +29,17 @@
         \t\t - Guitar/Keyboard switch\n
         \t\t - Dazzling virtual-rotor display\n
         \t\tConnections\n
-        Guitars and keyboards alike can be plugged into the RT-20; use the Drive Type switch to
-        optimize the effects for guitar or keyboard. Surround your listeners in animated sound with
-        the RT-20’s dual outputs, which enable true stereo effects. Add color by adding an
-        Expression pedal (such as the new BOSS FV-500H/FV-500L, optional), which lets you control
-        parameters such as rotation speed seamlessly from slow to fast in real time. The RT-20’s
-        phone jack is handy for private practice and experimentation.\n
+        Guitars and keyboards alike can be plugged into the RT-20; use the Drive Type switch to optimize the effects for guitar or keyboard. Surround your listeners in animated sound with the RT-20’s dual outputs, which enable true stereo effects. Add color by adding an Expression pedal (such as the new BOSS FV-500H/FV-500L, optional), which lets you control parameters such as rotation speed seamlessly from slow to fast in real time. The RT-20’s phone jack is handy for private practice and experimentation.\n
         \t\tVirtual Rotor Display\n
-        Thanks to its stunning visual display, the RT-20 might be the most eye-catching pedal in
-        BOSS history. The spinning lights don’t just look cool, they also show the audio-rotation
-        characteristics of the RT-20 in real time. The center of the display, illuminated in red
-        light, represents the virtual horn. The outside ring, illuminated in blue, displays the
-        rotation of the virtual bass speaker. It’s attractive and informative!</string>
-    <string name="tb_2w">\t\t BOSS and Sola Sound have come together to introduce the TB-2W Tone
-        Bender, an authentic sonic recreation of the iconic Tone Bender MK II fuzz pedal used by
-        some of the greatest guitarists of all time. Heard on legions of classic tracks from the
-        1960s through today, the Tone Bender’s bold, rich voice and smooth sustain are forever
-        embedded in the annals of rock and pop music history.\n
-        \t\t Using a “masterpiece” Tone Bender MK II (serial number 500) from Sola Sound’s archive
-        as a benchmark reference, BOSS engineers have fully realized the pedal’s magical sound and
-        expressive dynamic response through detailed Waza craftsmanship. Available in a limited
-        production run, each TB-2W features rare germanium transistors carefully tested for optimum
-        tone, a three-way voltage selector, selectable true/buffered bypass operation, and a refined
-        circuit design for ultra-consistent performance from pedal to pedal.\n
+        Thanks to its stunning visual display, the RT-20 might be the most eye-catching pedal in BOSS history. The spinning lights don’t just look cool, they also show the audio-rotation characteristics of the RT-20 in real time. The center of the display, illuminated in red light, represents the virtual horn. The outside ring, illuminated in blue, displays the rotation of the virtual bass speaker. It’s attractive and informative!</string>
+    <string name="tb_2w">\t\t BOSS and Sola Sound have come together to introduce the TB-2W Tone Bender, an authentic sonic recreation of the iconic Tone Bender MK II fuzz pedal used by some of the greatest guitarists of all time. Heard on legions of classic tracks from the 1960s through today, the Tone Bender’s bold, rich voice and smooth sustain are forever embedded in the annals of rock and pop music history.\n
+        \t\t Using a “masterpiece” Tone Bender MK II (serial number 500) from Sola Sound’s archive as a benchmark reference, BOSS engineers have fully realized the pedal’s magical sound and expressive dynamic response through detailed Waza craftsmanship. Available in a limited production run, each TB-2W features rare germanium transistors carefully tested for optimum tone, a three-way voltage selector, selectable true/buffered bypass operation, and a refined circuit design for ultra-consistent performance from pedal to pedal.\n
         \t\t - Authentic sonic recreation of the legendary Tone Bender MK II fuzz from the 1960s\n
         \t\t - Three-way voltage selector for shaping the overall tone and response\n
         \t\t - Selectable true bypass or buffered bypass operation\n
         \t\t - Limited production run due to component availability\n
         \t\t - Available in Q2 2021—more details to come</string>
-    <string name="od_1x">\t\t The OD-1X launches the famous BOSS overdrive into a modern era of
-        expression, delivering an unmatched level of performance for guitarists with an ear for
-        tone. This next-generation stomp combines over 35 years of innovation in pedal design with
-        the most advanced technologies, bringing you a completely new tonal experience that’s only
-        possible with the legendary expertise of BOSS. Prepare to be amazed—the inspiring and
-        ultra-responsive OD-1X will change your thinking about overdrive pedals forever.\n
+    <string name="od_1x">\t\t The OD-1X launches the famous BOSS overdrive into a modern era of expression, delivering an unmatched level of performance for guitarists with an ear for tone. This next-generation stomp combines over 35 years of innovation in pedal design with the most advanced technologies, bringing you a completely new tonal experience that’s only possible with the legendary expertise of BOSS. Prepare to be amazed—the inspiring and ultra-responsive OD-1X will change your thinking about overdrive pedals forever.\n
         \t\t - Special edition BOSS overdrive pedal with next-generation sound, feel, and response\n
         \t\t - All-new design provides a superior playing experience that’s unattainable with analog overdrive pedals\n
         \t\t - Powerful real-time processing delivers rich, wide-range sounds with natural compression\n
@@ -85,12 +50,7 @@
         \t\t - Striking appearance with exclusive chrome knobs and control plate, plus vintage silver knob for battery compartment access\n
         \t\t - Features BOSS’ innovative Multi-Dimensional Processing (MDP), realized with proprietary technology and custom DSP\n
         \t\t - BOSS five-year warranty</string>
-    <string name="mt_2w">\t\t For over 25 years, the MT-2 Metal Zone has been one of the most popular
-        and influential compact pedals in the BOSS lineup, with overall sales that are second only to
-        the venerable DS-1 Distortion. Made in Japan and infused with Waza Craft mojo, the MT-2W takes
-        the iconic stomp to new levels of tonal range and versatility. Standard mode delivers an evolved
-        version of the original mid-focused Metal Zone tone, while Custom mode introduces a fresh,
-        wide-ranging voice that’s perfectly suited for today’s diverse high-gain styles.\n
+    <string name="mt_2w">\t\t For over 25 years, the MT-2 Metal Zone has been one of the most popular and influential compact pedals in the BOSS lineup, with overall sales that are second only to the venerable DS-1 Distortion. Made in Japan and infused with Waza Craft mojo, the MT-2W takes the iconic stomp to new levels of tonal range and versatility. Standard mode delivers an evolved version of the original mid-focused Metal Zone tone, while Custom mode introduces a fresh, wide-ranging voice that’s perfectly suited for today’s diverse high-gain styles.\n
         \t\t - Premium Waza Craft pedal with all-analog audio circuitry\n
         \t\t - Innovative dual-stage gain circuit built with discrete analog components\n
         \t\t - Standard mode updates the famous MT-2 Metal Zone sound with improved clarity and lower noise\n
@@ -99,12 +59,7 @@
         \t\t - Premium buffer for clean and clear tone when bypassed\n
         \t\t - Made in Japan\n
         \t\t - BOSS five-year warranty</string>
-    <string name="jb_2">\t\t To celebrate the 40th anniversary of BOSS compact pedals, BOSS and JHS
-        Pedals have come together in a historic creative collaboration between the two industry leaders.
-        Housed in the classic BOSS compact design, the JB-2 Angry Driver pairs the tones of the iconic
-        BOSS BD-2 Blues Driver with JHS Pedals’ popular Angry Charlie. Working closely together, the
-        two pedal innovators have developed an all-new combined circuit with refined sound and performance
-        perfectly tuned for dual-mode drive operation.\n
+    <string name="jb_2">\t\t To celebrate the 40th anniversary of BOSS compact pedals, BOSS and JHS Pedals have come together in a historic creative collaboration between the two industry leaders. Housed in the classic BOSS compact design, the JB-2 Angry Driver pairs the tones of the iconic BOSS BD-2 Blues Driver with JHS Pedals’ popular Angry Charlie. Working closely together, the two pedal innovators have developed an all-new combined circuit with refined sound and performance perfectly tuned for dual-mode drive operation.\n
         The JB-2 Angry Driver features three dual-concentric knobs that provide independent drive,
         tone, and level control for each overdrive type. Via a six-position mode selector, you can
         use each overdrive independently, or combine them together in series and parallel configurations.
@@ -135,7 +90,88 @@
         \t\t - Standard and Custom sound modes\n
         \t\t - Highly responsive to picking dynamics and volume changes\n
         \t\t - BOSS five-year warranty</string>
+    <string name="ds_1x">\t\t Special Edition BOSS Pedal with Premium Tone\n
+        \t\t The DS-1X launches the famous BOSS distortion into a modern era of expression, delivering an unmatched level of performance for guitarists with an ear for tone. This next-generation stomp combines over 35 years of innovation in pedal design with the most advanced technologies, bringing you a completely new tonal experience that’s only possible with the legendary expertise of BOSS. Prepare to be amazed—the inspiring and ultra-responsive DS-1X will change your thinking about distortion pedals forever.\n
+        \t\t - Special edition BOSS distortion pedal with next-generation sound, feel, and tonal response
+        \t\t - All-new design provides a superior playing experience that’s unattainable with analog distortion pedals
+        \t\t - Powerful real-time processing adapts to your playing to provide ideal distortion tones in every register
+        \t\t - Enjoy perfect sounds over the entire fretboard, from tight, crisp tones on the low strings to fat, singing tones on the highest notes
+        \t\t - High-clarity distortion sound that’s never muddy or boomy, even when playing two or more notes at the same time
+        \t\t - Ultra-responsive to volume changes and picking dynamics
+        \t\t - Very low noise, even with high-gain settings
+        \t\t - Drive, High, and Low knobs offer a wide range of sound shaping not found in typical stompbox pedals
+        \t\t - Striking appearance with exclusive chrome knobs and control plate, plus vintage silver knob for battery compartment access
+        \t\t - Features BOSS’ innovative Multi-Dimensional Processing (MDP), realized with proprietary technology and custom DSP
+        \t\t - BOSS five-year warranty</string>
+    <string name="bc_2">\t\t British Combo-Amp Tone and Beyond\n
+        \t\t The new BOSS BC-2 generates a classic “AC-inspired” British combo-amp tone in a compact pedal, but that’s just the starting point. With a single knob, you can instantly control a variety of sound-character parameters, and quickly tap into a full spectrum of tone. Achieve the perfect vintage sound or dial into higher gain or cleaner tone across a wider frequency range than the classic amp could provide on its own. The BC-2 also offers a natural and dynamic response to your picking nuances at any setting. This easy-to-use yet technically complex pedal takes you from authentic vintage tone to expanded new-generation performance and sound.\n
+        \t\t - Wide range of tones with a single knob —from classic crisp clean and punchy crunch to creamy overdrive with long sustain and beyond
+        \t\t - Natural and dynamic response to picking nuance at any knob position
+        \t\t - Provides warm combo tones and authentic combo-amp cabinet resonance</string>
+    <string name="bd_2">\t\t The perfect Tone For Blues\n
+        \t\t The BD-2 Blues Driver delivers the creamy, yet crunchy sound associated with great blues guitar. This popular pedal provides instant access to the kind of warm overdrive and emotive distortion usually reserved for 30-year-old tube amps.\n
+        \t\t - Classic "blues" guitar tones with tube amp simulation
+        \t\t - Warm distortion and overdrive
+        \t\t - Responds to nuance and volume changes
+        \t\t - AC adaptor or 9V battery operation
+        \t\t - BOSS five-year warranty</string>
+    <string name="ds_1">\t\t The Benchmark in Guitar Distortion\n
+        \t\t The DS-1 Distortion is a true icon in the world of guitar effects. Introduced in 1978, BOSS’s first distortion pedal defined a bold new sound, delivering hard-edged attack and smooth sustain that’s been a staple of players for generations. The DS-1 is the top-selling BOSS compact pedal ever, and its original, unchanged design continues to inspire the creation of great music everywhere. The classic DS-1 tone is behind the signature sounds of numerous rock legends, and is ready to fuel your own signature sound today.\n
+        \t\t - Legendary distortion used by guitarists everywhere since 1978
+        \t\t - Classic tones for all types of music
+        \t\t - Hard-edged attack remains clear even at maximum distortion settings, ideal for heavy rhythms and cutting solos
+        \t\t - Works great as a booster at low distortion settings
+        \t\t - Unique tone control offers a wide range of sound shaping
+        \t\t - Doesn’t mask the unique sound characteristics of different guitars, pickups, and styles
+        \t\t - Turning down the guitar’s volume cleans up the tone without introducing muddiness</string>
+    <string name="ds_2">\t\t Two Distortions for the Price of One\n
+        \t\t The DS-2 Turbo Distortion features twin modes for an expanded range of distortion—taking users from blues-rock rhythms to searing leads at the press of a pedal or twist of a knob.\n
+        \t\t - Classic BOSS distortion tones with added Turbo modes
+        \t\t - Turbo Mode I produces warm and mellow distortion with flat frequency response
+        \t\t - Turbo Mode II provides biting distortion with a mid-range boost, perfect for leads
+        \t\t - Built-in remote jack allows users to connect an external footswitch such as the FS-5L for instant, hands-free switching between modes</string>
+    <string name="fz_5">\t\t A Distorted Blast from the Past\n
+        \t\t The FZ-5 is a modern pedal built for the modern guitarist, but the sounds you can get from the FZ-5 are pure retro. Looking back at the glorious rock sounds of the ’60s and ’70s, the FZ-5 recreates its vintage fuzz through BOSS state-of-the-art COSM technology. Recall the fuzz-filled flavors of classic pedals, such as the Maestro FZ-1A, Fuzz Face and Octavia pedals, and kick ’em into overdrive with the FZ-5’s Boost knob. BOSS’ proprietary COSM technology allows guitar players to recreate classic fuzz BOOST control for more aggressive tone. The FZ-5 is the perfect weapon for players wanting to beef up their rigs with classic retro fuzz artillery.\n
+        \t\t - Vintage sounds inspired by famous fuzz pedals of the ’60s and ’70s
+        \t\t - Uses advanced COSM technology to recreate classic fuzz
+        \t\t - BOOST control for more aggressive tone
+        \t\t - Road-tough BOSS metal construction</string>
+    <string name="md_2">\t\t Extreme Distortion for Extreme Music\n
+        \t\t The MD-2 Mega distortion takes the bottom-heavy distortion sounds heard in today\'s new-school metal and pushes it to the extreme. The secret is a special dual-stage distortion circuit with an added gain boost-plus new Bottom and Tone controls—for crushing distortion with massive low end. Take your distortion into the future with the MD-2.\n
+        \t\t - Produces extreme, low-end distortion for modern metal and hard rock
+        \t\t - Gain Boost circuit creates huge distortion and sustain regardless of level
+        \t\t - New Bottom control for bottom-heavy distortion matched to 6- or 7-string guitars
+        \t\t - Tone control adjusts balance between high and low frequencies</string>
+    <string name="ml_2">\t\t Extreme Metal in a Compact Pedal\n
+        \t\t With its extreme gain, the ML-2 is the most potent and heavy distortion pedal ever created by BOSS. It easily delivers massive distortion and gain with heavy lows for playing Nu Metal, Grind Core, Industrial, Hard Core, or any genre that requires crushing sound. The ML-2’s ferocious and biting tone will complement and cut through any blast beats your rhythm section can create.\n
+        \t\t - Ultra-heavy distortion with sharp-edged attack for crushing metal riffs
+        \t\t - LOW control for heavy, low frequency sound a la 7-string guitar or dropped tuning
+        \t\t - HIGH control for screaming, metallic tone
+        \t\t - Road-tough BOSS metal construction</string>
+    <string name="mt_2">\t\t A very wide range of distortion sounds with 3-band EQ and strong sustain.\n
+        \t\t The MT-2 Metal Zone is one of BOSS\'s most popular pedals. This stompbox provides some of the most over-the-top, insane distortion tones in the world—with huge mids and lows and an ultra-saturated sound.\n
+        \t\t - Incredible-sounding distortion pedal with unique dual-gain circuitry
+        \t\t - Provides super-long sustain and heavy mids and lows like a stack of overdriven amps
+        \t\t - Three-band EQ with semi-parametric Mid control offers a wide range of extreme distortion textures
+        \t\t - A must-have pedal for any hard rock or metal guitarist</string>
+    <string name="od_3">\t\t Natural Overdrive with Endless Sustain!\n
+        \t\t Built in the tradition of the legendary BOSS overdrives, the OD-3 OverDrive pedal gives guitarists a greatly expanded range of smooth overdrive tones and improved response while staying true to the original.\n
+        \t\t - Dual-Stage Overdrive Circuit offers a level of sustain and compression unmatched by any overdrive pedal
+        \t\t - Increased dynamics yield a "bigger" sound than any previous BOSS overdrive pedal
+        \t\t - Dynamic, non-muffled tones reminiscent of classic overdriven "stack" amps
+        \t\t - Straightforward Drive, Tone and Level controls</string>
+    <string name="os_2">\t\t Distortion and Overdrive Together At Last!\n
+        \t\t The OS-2 gives players a choice of overdrive or distortion or lets them combine both — all in a single compact pedal. Its distortion maintains the subtle nuances of single-coil guitar pickups.\n
+        \t\t - Flexible distortion pedal capable of producing blended overdrive/distortion sounds
+        \t\t - Provides both \"over-the-top\" distortion sounds and less extreme overdriv tones for rhythm playing
+        \t\t - Includes Level, Tone, Drive and Color controls for precise tonal shaping</string>
+    <string name="sd_1">\t\t Warm, Tube Drive Sounds\n
+        \t\t The SD-1 Super OverDrive pedal produces the warm, natural distortion of an overdriven tube amplifier while maintaining the subtle nuances of a player\'s picking technique. This is one of BOSS\' more subtle and smooth overdrive pedals, perfect for blues and rock.\n
+        \t\t - Compact overdrive pedal with warm, smooth overdriven sounds
+        \t\t - Unique asymmetric overdrive circuitry for a classic, natural tube amp growl
+        \t\t - Tone control provides precise adjustment of drive sound`</string>
     <string name="template">\t\t \n
+        \t\t \n
         \t\t - </string>
 
 </resources>

@@ -2,9 +2,7 @@ package com.squorpikkor.app.whostheboss;
 
 import java.util.ArrayList;
 
-/**
- * Педаль эффектов BOSS
- */
+/**Педаль эффектов BOSS*/
 class Pedal {
 
     public static final int ALL = 0;
@@ -22,44 +20,26 @@ class Pedal {
     public static final int AMP_EMULATOR = 12;
     public static final int CHORUS = 13;
 
-
-
-    /**
-     * Имя (Distortion)
-     */
+    /**Имя (Distortion)*/
     private final String name;
-    /**
-     * Короткое имя (DS-1)
-     */
+    /**Короткое имя (DS-1)*/
     private final String shortName;
-    /**
-     * Ссылка на картинку
-     */
+    /**Ссылка на картинку*/
     private final int image;
-    /**
-     * Ссылка на картинку
-     */
+    /**Ссылка на картинку*/
     private final int smallImage;
-    /**
-     * Год начала продаж
-     */
+    /**Год начала продаж*/
     private final int yearStart;
-    /**
-     * Год окончания продаж, если = 0, значит ещё продается
-     */
+    /**Год окончания продаж, если = 0, значит ещё продается*/
     private final int yearEnd;
-    /**
-     * моё отношение: хочу купить, есть такая, не нужна, хочу такую, но дорого, есть более лучшая (не всегда более новая) версия, не знаю зачем и т.д. Будет задаваться static final String
-     */
+    /**моё отношение: хочу купить, есть такая, не нужна, хочу такую, но дорого, есть более лучшая (не всегда более новая) версия, не знаю зачем и т.д. Будет задаваться static final String*/
     private String status;
-    /**
-     * Описание
-     */
+    /**Описание*/
     private final int description;
 
     private final ArrayList<Integer> Category;
 
-    public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int description, int cat1) {
+    public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int description, int... cats) {
         this.description = description;
         this.name = name;
         this.shortName = shortName;
@@ -68,49 +48,7 @@ class Pedal {
         this.yearStart = yearStart;
         this.yearEnd = yearEnd;
         this.Category = new ArrayList<>();
-        Category.add(cat1);
-    }
-
-    public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int description, int cat1, int cat2) {
-        this.description = description;
-        this.name = name;
-        this.shortName = shortName;
-        this.image = image;
-        this.smallImage = smallImage;
-        this.yearStart = yearStart;
-        this.yearEnd = yearEnd;
-        this.Category = new ArrayList<>();
-        Category.add(cat1);
-        Category.add(cat2);
-    }
-
-    public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int description, int cat1, int cat2, int cat3) {
-        this.description = description;
-        this.name = name;
-        this.shortName = shortName;
-        this.image = image;
-        this.smallImage = smallImage;
-        this.yearStart = yearStart;
-        this.yearEnd = yearEnd;
-        this.Category = new ArrayList<>();
-        Category.add(cat1);
-        Category.add(cat2);
-        Category.add(cat3);
-    }
-
-    public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int description, int cat1, int cat2, int cat3, int cat4) {
-        this.description = description;
-        this.name = name;
-        this.shortName = shortName;
-        this.image = image;
-        this.smallImage = smallImage;
-        this.yearStart = yearStart;
-        this.yearEnd = yearEnd;
-        this.Category = new ArrayList<>();
-        Category.add(cat1);
-        Category.add(cat2);
-        Category.add(cat3);
-        Category.add(cat4);
+        for (int cat:cats) Category.add(cat);
     }
 
     public String getStatus() {
