@@ -15,6 +15,7 @@ import static com.squorpikkor.app.whostheboss.Pedal.DISTORTION_OVERDRIVE;
 import static com.squorpikkor.app.whostheboss.Pedal.DYNAMICS_FILTER;
 import static com.squorpikkor.app.whostheboss.Pedal.OTHERS;
 import static com.squorpikkor.app.whostheboss.Pedal.PITCH_MODULATION;
+import static com.squorpikkor.app.whostheboss.Pedal.SERIES_10;
 import static com.squorpikkor.app.whostheboss.Pedal.SERIES_20;
 import static com.squorpikkor.app.whostheboss.Pedal.WAZA_CRAFT;
 
@@ -209,7 +210,20 @@ public class MainViewModel extends ViewModel {
         list.add(new Pedal("Wave Processor",        "WP-20G",   R.drawable.wp20g,   R.drawable.wp20g_small, -1, -1,      0, SERIES_20, OTHERS));
         list.add(new Pedal("V-Guitar Distortion",   "GR-D",     R.drawable.gr_d,    R.drawable.gr_d_small,  -1, -1,      0, SERIES_20, OTHERS));
         list.add(new Pedal("V-Guitar Space",        "GR-S",     R.drawable.gr_s,    R.drawable.gr_s_small,  -1, -1,      0, SERIES_20, OTHERS));
-
+        //10 Series
+        list.add(new Pedal("Compressor Limiter",    "RCL-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, DYNAMICS_FILTER));
+        list.add(new Pedal("Graphic Equalizer",     "RGE-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, DYNAMICS_FILTER));
+        list.add(new Pedal("Digital Delay",         "RDD-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, DELAY_REVERB));
+        list.add(new Pedal("Phaser",                "RPH-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, PITCH_MODULATION));
+        list.add(new Pedal("Flanger",               "RBF-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, PITCH_MODULATION));
+        list.add(new Pedal("Digital Chorus Ensemble","RCE-10",  R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, CHORUS, PITCH_MODULATION));
+        list.add(new Pedal("Digital Reverb",        "RRV-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, DELAY_REVERB));
+        list.add(new Pedal("Overdrive / Distortion","ROD-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, DISTORTION_OVERDRIVE));
+        list.add(new Pedal("Pitch Shifter / Delay", "RPS-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, DELAY_REVERB, PITCH_MODULATION));
+        list.add(new Pedal("Preamp / Parametric EQ","RPQ-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, DYNAMICS_FILTER));
+        list.add(new Pedal("Digital Sampler / Delay","RSD-10",  R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, DELAY_REVERB));
+        list.add(new Pedal("Panning Delay",         "RPD-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, DELAY_REVERB));
+        list.add(new Pedal("Power supply",          "RPW-7",    R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, OTHERS));
         return list;
     }
 

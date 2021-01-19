@@ -19,6 +19,7 @@ class Pedal {
     public static final int WAZA_CRAFT = 11;
     public static final int AMP_EMULATOR = 12;
     public static final int CHORUS = 13;
+    public static final int SERIES_10 = 14;
 
     /**Имя (Distortion)*/
     private final String name;

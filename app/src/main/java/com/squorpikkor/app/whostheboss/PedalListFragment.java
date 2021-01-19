@@ -29,6 +29,7 @@ import static com.squorpikkor.app.whostheboss.Pedal.DISTORTION_OVERDRIVE;
 import static com.squorpikkor.app.whostheboss.Pedal.DYNAMICS_FILTER;
 import static com.squorpikkor.app.whostheboss.Pedal.OTHERS;
 import static com.squorpikkor.app.whostheboss.Pedal.PITCH_MODULATION;
+import static com.squorpikkor.app.whostheboss.Pedal.SERIES_10;
 import static com.squorpikkor.app.whostheboss.Pedal.SERIES_20;
 import static com.squorpikkor.app.whostheboss.Pedal.WAZA_CRAFT;
 
@@ -59,6 +60,7 @@ public class PedalListFragment extends Fragment {
         catMap.put("Chorus", CHORUS);
         catMap.put("WAZA Craft", WAZA_CRAFT);
         catMap.put("Others", OTHERS);
+        catMap.put("10 Series", SERIES_10);
     }
 
     String[] spinnerList;
