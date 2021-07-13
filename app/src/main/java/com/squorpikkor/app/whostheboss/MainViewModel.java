@@ -25,7 +25,7 @@ public class MainViewModel extends ViewModel {
 
     private int position;
 
-    //Выбор устройств по одной категории. У каждого устройттва может быть несколько категорий
+    //Выбор устройств по одной категории. У каждого устройства может быть несколько категорий
     public void setPedalListByCategory(int category) {
         if (category == ALL) {
             if (pedalList.getValue()!=null) pedalList.getValue().clear();
@@ -36,6 +36,26 @@ public class MainViewModel extends ViewModel {
             for (Pedal pedal:getAll()) {
                 for (int cat:pedal.getCategory()) {
                     if (cat == category) {
+                        list.add(pedal);
+                    } /*else break;*/
+                }
+            }
+            if (pedalList.getValue()!=null) pedalList.getValue().clear();
+            pedalList.setValue(list);
+        }
+    }
+
+    public void setPedalListByCategory(int category, int state) {
+        if (category == ALL) {
+            if (pedalList.getValue()!=null) pedalList.getValue().clear();
+            pedalList.setValue(getAll());
+        } else {
+            int pedalState;
+            ArrayList<Pedal> list = new ArrayList<>();
+            for (Pedal pedal:getAll()) {
+                pedalState = pedal.getStatus();
+                for (int cat:pedal.getCategory()) {
+                    if (cat == category && pedalState == state) {
                         list.add(pedal);
                     } /*else break;*/
                 }
@@ -66,6 +86,7 @@ public class MainViewModel extends ViewModel {
         list.add(new Pedal("Over Drive",            "OD-1",     R.drawable.od_1,    R.drawable.od_1_small, 1977, 1988,  0,  DISTORTION_OVERDRIVE));
         list.add(new Pedal("Spectrum",              "SP-1",     R.drawable.sp_1,    R.drawable.sp_1_small, 1977, 1981,  0,  PITCH_MODULATION));
         list.add(new Pedal("Phaser",                "PH-1",     R.drawable.ph_1,    R.drawable.ph_1_small, 1977, 1981,  0,  PITCH_MODULATION));
+        list.add(new Pedal("Phaser",                "PH-1R",     R.drawable.ph_1,    R.drawable.ph_1_small, 1980, 1985,  0,  PITCH_MODULATION));
         list.add(new Pedal("Graphic Equalizer",     "GE-6",     R.drawable.ge_6,    R.drawable.ge_6_small, 1978, 1981,  0,  DYNAMICS_FILTER));
         list.add(new Pedal("T-Wah",                 "TW-1",     R.drawable.tw_1,    R.drawable.tw_1_small, 1978, 1988,  0,  DYNAMICS_FILTER));
         list.add(new Pedal("Touch Wah",             "TW-1",     R.drawable.tow_1,   R.drawable.tow_1_small,1978, 1988,  0,  DYNAMICS_FILTER));
@@ -81,7 +102,8 @@ public class MainViewModel extends ViewModel {
         list.add(new Pedal("Graphic Equalizer",     "GE-7",     R.drawable.ge_7,    R.drawable.ge_7_small, 1981, 0,     0,  DYNAMICS_FILTER));
         list.add(new Pedal("Compression Sustainer", "CS-2",     R.drawable.cs_2,    R.drawable.cs_2_small, 1981, 1988,  0,  DYNAMICS_FILTER));
         list.add(new Pedal("Vibrato",               "VB-2",     R.drawable.vb_2,    R.drawable.vb_2_small, 1982, 1984,  0,  PITCH_MODULATION));
-        list.add(new Pedal("Octave",                "OC-2",     R.drawable.oc_2,    R.drawable.oc_2_small, 1982, 2003,  0,  PITCH_MODULATION));
+        list.add(new Pedal("Octaver",                "OC-2",     R.drawable.oc_2,    R.drawable.oc_2_small, 1982, 1984,  0,  PITCH_MODULATION));
+        list.add(new Pedal("Octave",                "OC-2",     R.drawable.oc_2,    R.drawable.oc_2_small, 1984, 2003,  0,  PITCH_MODULATION));
         list.add(new Pedal("Power Supply & Master Switch", "PSM-5", R.drawable.psm_5, R.drawable.psm_5_small,1982, 1999,0,  OTHERS));
         list.add(new Pedal("Chorus",                "CE-3",     R.drawable.ce_3,    R.drawable.ce_3_small, 1982, 1989,  0,  CHORUS, PITCH_MODULATION));
         list.add(new Pedal("Heavy Metal",           "HM-2",     R.drawable.hm_2,    R.drawable.hm_2_small, 1983, 1992,  0,  DISTORTION_OVERDRIVE));
@@ -95,7 +117,7 @@ public class MainViewModel extends ViewModel {
         list.add(new Pedal("Dimension C",           "DC-2",     R.drawable.dc_2,    R.drawable.dc_2_small, 1985, 1988,  0,  CHORUS, PITCH_MODULATION));
         list.add(new Pedal("Digital Sampler/Delay", "DSD-3",    R.drawable.dsd_3,   R.drawable.dsd_3_small,1986, 1989,  0,  DELAY_REVERB));
         list.add(new Pedal("Compression Sustainer", "CS-3",     R.drawable.cs_3,    R.drawable.cs_3_small, 1986, 0,     0,  DYNAMICS_FILTER));
-        list.add(new Pedal("Digital Delay",         "DD-3",     R.drawable.dd_3,    R.drawable.dd_3_small, 1986, 0,     0,  DELAY_REVERB));
+        list.add(new Pedal("Digital Delay",         "DD-3",     R.drawable.dd_3,    R.drawable.dd_3_small, 1986, 2019,     0,  DELAY_REVERB));
         list.add(new Pedal("Dynamic Filter",        "FT-2",     R.drawable.ft_2,    R.drawable.ft_2_small, 1986, 1989,  0,  DYNAMICS_FILTER));
         list.add(new Pedal("Bass Chorus",           "CE-2B",    R.drawable.ceb_2,   R.drawable.ceb_2_small,1987, 1994,  0,  CHORUS, BASS_PEDALS, PITCH_MODULATION));
         list.add(new Pedal("Bass Flanger",          "BF-2B",    R.drawable.bfb_2,   R.drawable.bfb_2_small,1987, 1993,  0,  BASS_PEDALS, PITCH_MODULATION));
@@ -106,9 +128,10 @@ public class MainViewModel extends ViewModel {
         list.add(new Pedal("Noise Suppressor",      "NS-2",     R.drawable.ns_2,    R.drawable.ns_2_small, 1987, 0,     0,  OTHERS));
         list.add(new Pedal("Digital Pitch Shifter", "PS-2",     R.drawable.ps_2,    R.drawable.ps_2_small, 1987, 1993,  0,  PITCH_MODULATION));
         list.add(new Pedal("Digital Metalizer",     "MZ-2",     R.drawable.mz_2,    R.drawable.mz_2_small, 1987, 1992,  0,  CHORUS, DISTORTION_OVERDRIVE, DELAY_REVERB, PITCH_MODULATION));
-        list.add(new Pedal("Digital Dimension",     "DC-3",     R.drawable.dcc_3,   R.drawable.dcc_3_small,1988, 1992,  0,  CHORUS, PITCH_MODULATION));
-        list.add(new Pedal("Digital Space D",       "DC-3",     R.drawable.dc_3,    R.drawable.dc_3_small, 1988, 1992,  0,  CHORUS, PITCH_MODULATION));
-        list.add(new Pedal("SUPER Chorus (a/d)",    "CH-1",     R.drawable.ch_1,    R.drawable.ch_1_small, 1989, 0,     0,  CHORUS, PITCH_MODULATION));
+        list.add(new Pedal("Digital Dimension",     "DC-3",     R.drawable.dcc_3,   R.drawable.dcc_3_small,1988, 1993,  0,  CHORUS, PITCH_MODULATION));
+        list.add(new Pedal("Digital Space D",       "DC-3",     R.drawable.dc_3,    R.drawable.dc_3_small, 1989, 1992,  0,  CHORUS, PITCH_MODULATION));
+        list.add(new Pedal("SUPER Chorus (analog)",    "CH-1",     R.drawable.ch_1,    R.drawable.ch_1_small, 1989, 2001,     0,  CHORUS, PITCH_MODULATION));
+        list.add(new Pedal("SUPER Chorus (digital)",    "CH-1",     R.drawable.ch_1,    R.drawable.ch_1_small, 2001, 0,     0,  CHORUS, PITCH_MODULATION));
         list.add(new Pedal("Enhancer",              "EH-2",     R.drawable.eh_2,    R.drawable.eh_2_small, 1990, 1998,  0,  OTHERS));
         list.add(new Pedal("Bass Limiter",          "LM-2B",    R.drawable.lmb_2,   R.drawable.lmb_2_small,1990, 1994,  0,  BASS_PEDALS, DYNAMICS_FILTER));
         list.add(new Pedal("Tremolo/Pan",           "PN-2",     R.drawable.pn_2,    R.drawable.pn_2_small, 1990, 1993,  0,  PITCH_MODULATION));
@@ -117,7 +140,8 @@ public class MainViewModel extends ViewModel {
         list.add(new Pedal("Parametric Equalizer",  "PQ-4",     R.drawable.pq_4,    R.drawable.pq_4_small, 1991, 1996,  0,  DYNAMICS_FILTER));
         list.add(new Pedal("Bass Parametric Equalizer", "PQ-3B",R.drawable.pqb_3,   R.drawable.pqb_3_small,1991, 1994,  0,  BASS_PEDALS, DYNAMICS_FILTER));
         list.add(new Pedal("Auto Wah",              "AW-2",     R.drawable.aw_2,    R.drawable.aw_2_small, 1991, 1999,  0,  DYNAMICS_FILTER));
-        list.add(new Pedal("Chorus Ensemble (a/d)", "CE-5",     R.drawable.ce_5,    R.drawable.ce_5_small, 1991, 0,     0,  CHORUS, PITCH_MODULATION));
+        list.add(new Pedal("Chorus Ensemble (analog)", "CE-5",     R.drawable.ce_5,    R.drawable.ce_5_small, 1991, 2001,     0,  CHORUS, PITCH_MODULATION));
+        list.add(new Pedal("Chorus Ensemble (digital)", "CE-5",     R.drawable.ce_5,    R.drawable.ce_5_small, 2001, 0,     0,  CHORUS, PITCH_MODULATION));
         list.add(new Pedal("Line Selector",         "LS-2",     R.drawable.ls_2,    R.drawable.ls_2_small, 1991, 0,     0,  OTHERS));
         list.add(new Pedal("HYPER Fuzz",            "FZ-2",     R.drawable.fz_2,    R.drawable.fz_2_small, 1993, 1997,  0,  DISTORTION_OVERDRIVE));
         list.add(new Pedal("DUAL Overdrive",        "SD-2",     R.drawable.sd_2,    R.drawable.sd_2_small, 1993, 1998,  0,  DISTORTION_OVERDRIVE));
@@ -127,7 +151,8 @@ public class MainViewModel extends ViewModel {
         list.add(new Pedal("TURBO OverDrive",       "OD-2R",    R.drawable.odr_2,   R.drawable.odr_2_small,1994, 1999,  0,  DISTORTION_OVERDRIVE));
         list.add(new Pedal("Bass OverDrive",        "ODB-3",    R.drawable.odb_3,   R.drawable.odb_3_small,1994, 0,     0,  BASS_PEDALS, DISTORTION_OVERDRIVE));
         list.add(new Pedal("Harmonist",             "HR-2",     R.drawable.hr_2,    R.drawable.hr_2_small, 1994, 1999,  0,  PITCH_MODULATION));
-        list.add(new Pedal("Bass Chorus",           "CEB-3",    R.drawable.ceb_3,   R.drawable.ceb_3_small,1995, 0,     0,  CHORUS, BASS_PEDALS, PITCH_MODULATION));
+        list.add(new Pedal("Bass Chorus (analog)",           "CEB-3",    R.drawable.ceb_3,   R.drawable.ceb_3_small,1995, 2001,     0,  CHORUS, BASS_PEDALS, PITCH_MODULATION));
+        list.add(new Pedal("Bass Chorus (digital)",           "CEB-3",    R.drawable.ceb_3,   R.drawable.ceb_3_small,2001, 0,     0,  CHORUS, BASS_PEDALS, PITCH_MODULATION));
         list.add(new Pedal("Bass Limiter Enhancer", "LMB-3",    R.drawable.lmb_3,   R.drawable.lmb_3_small,1995, 0,     0,  BASS_PEDALS, DYNAMICS_FILTER));
         list.add(new Pedal("Bass Equalizer",        "GEB-7",    R.drawable.geb_7,   R.drawable.geb_7_small,1995, 0,     0,  BASS_PEDALS, DYNAMICS_FILTER));
         list.add(new Pedal("Blues Driver",          "BD-2",     R.drawable.bd_2,    R.drawable.bd_2_small, 1995, 0,     R.string.bd_2,  DISTORTION_OVERDRIVE));
@@ -143,7 +168,7 @@ public class MainViewModel extends ViewModel {
         list.add(new Pedal("SUPER Shifter",         "PS-5",     R.drawable.ps_5,    R.drawable.ps_5_small, 1999, 2010,  0,  PITCH_MODULATION));
         list.add(new Pedal("Phase Shifter",         "PH-3",     R.drawable.ph_3,    R.drawable.ph_3_small, 2000, 0,     0,  PITCH_MODULATION));
         list.add(new Pedal("Dynamic Wah",           "AW-3",     R.drawable.aw_3,    R.drawable.aw_3_small, 2000, 0,     0,  DYNAMICS_FILTER));
-        list.add(new Pedal("Mega Distortion",       "MD-2",     R.drawable.md_2,    R.drawable.md_2_small, 2001, R.string.md_2,     0,  DISTORTION_OVERDRIVE));
+        list.add(new Pedal("Mega Distortion",       "MD-2",     R.drawable.md_2,    R.drawable.md_2_small, 2001, 0,     R.string.md_2,     0,  DISTORTION_OVERDRIVE));
         list.add(new Pedal("Flanger",               "BF-3",     R.drawable.bf_3,    R.drawable.bf_3_small, 2002, 0,     0,  PITCH_MODULATION));
         list.add(new Pedal("Digital Delay",         "DD-6",     R.drawable.dd_6,    R.drawable.dd_6_small, 2002, 2008,  0,  DELAY_REVERB));
         list.add(new Pedal("Digital Reverb",        "RV-5",     R.drawable.rv_5,    R.drawable.rv_5_small, 2002, 2015,  0,  DELAY_REVERB));
@@ -152,17 +177,17 @@ public class MainViewModel extends ViewModel {
         list.add(new Pedal("Acoustic Simulator",    "AC-3",     R.drawable.ac_3,    R.drawable.ac_3_small, 2005, 0,     0,  ACOUSTIC));
         list.add(new Pedal("Loop Station",          "RC-2",     R.drawable.rc_2,    R.drawable.rc_2_small, 2006, 2011,  0,  OTHERS));
         list.add(new Pedal("Metal Core",            "ML-2",     R.drawable.ml_2,    R.drawable.ml_2_small, 2007, 0,     R.string.ml_2,  DISTORTION_OVERDRIVE));
-        list.add(new Pedal("Fuzz",                  "FZ-5",     R.drawable.fz_5,    R.drawable.fz_5_small, 2007, R.string.fz_5,     0,  DISTORTION_OVERDRIVE));
+        list.add(new Pedal("Fuzz",                  "FZ-5",     R.drawable.fz_5,    R.drawable.fz_5_small, 2007, 0,     R.string.fz_5,     0,  DISTORTION_OVERDRIVE));
         list.add(new Pedal("Dyna Drive",            "DN-2",     R.drawable.dn_2,    R.drawable.dn_2_small, 2007, 2012,  0,  DISTORTION_OVERDRIVE));
         list.add(new Pedal("Fender Bass Man",       "FBM-1",    R.drawable.fbm_1,   R.drawable.fbm_1_small,2007, 2013,  0,  BASS_PEDALS, AMP_EMULATOR));
         list.add(new Pedal("Fender Deluxe Reverb",  "FDR-1",    R.drawable.fdr_1,   R.drawable.fdr_1_small,2007, 2013,  0,  AMP_EMULATOR));
         list.add(new Pedal("Digital Delay",         "DD-7",     R.drawable.dd_7,    R.drawable.dd_7_small, 2008, 0,     0,  DELAY_REVERB));
         list.add(new Pedal("Chromatic Tuner",       "TU-3",     R.drawable.tu_3,    R.drawable.tu_3_small, 2009, 0,     0,  OTHERS));
-        list.add(new Pedal("Fender Reverb",         "FRV-1",    R.drawable.frv_1,   R.drawable.frv_1_small,2009, 0,     0,  AMP_EMULATOR));
+        list.add(new Pedal("Fender Reverb",         "FRV-1",    R.drawable.frv_1,   R.drawable.frv_1_small,2009, 2019,     0,  AMP_EMULATOR));
         list.add(new Pedal("Harmonist",             "PS-6",     R.drawable.ps_6,    R.drawable.ps_6_small, 2010, 0,     0,  PITCH_MODULATION));
         list.add(new Pedal("Power Stack",           "ST-2",     R.drawable.st_2,    R.drawable.st_2_small, 2010, 0,     0,  AMP_EMULATOR));
         list.add(new Pedal("Loop Station",          "RC-3",     R.drawable.rc_3,    R.drawable.rc_3_small, 2011, 0,     0,  OTHERS));
-        list.add(new Pedal("Combo Drive",           "BC-2",     R.drawable.bc_2,    R.drawable.bc_2_small, 2011, 0,     R.string.bc_2,  DISTORTION_OVERDRIVE));
+        list.add(new Pedal("Combo Drive",           "BC-2",     R.drawable.bc_2,    R.drawable.bc_2_small, 2011, 2019,     R.string.bc_2,  DISTORTION_OVERDRIVE));
         list.add(new Pedal("Feedbacker/Booster",    "FB-2",     R.drawable.fb_2,    R.drawable.fb_2_small, 2011, 2015,  0,  DYNAMICS_FILTER));
         list.add(new Pedal("Tera Echo",             "TE-2",     R.drawable.te_2,    R.drawable.te_2_small, 2013, 0,     0,  DELAY_REVERB));
         list.add(new Pedal("Adaptive Distortion",   "DA-2",     R.drawable.da_2,    R.drawable.da_2_small, 2013, 2014,  0,  DISTORTION_OVERDRIVE));
@@ -183,16 +208,19 @@ public class MainViewModel extends ViewModel {
         list.add(new Pedal("Chorus",                "CE-2W",    R.drawable.ce_2w,   R.drawable.ce_2w_small,2016, 0,     0,  CHORUS, WAZA_CRAFT, PITCH_MODULATION));
         list.add(new Pedal("Acoustic Preamp",       "AD-2",     R.drawable.ad_2,    R.drawable.ad_2_small, 2016, 0,     0,  ACOUSTIC));
         list.add(new Pedal("Compressor",            "CP-1X",    R.drawable.cpx_1,   R.drawable.cpx_1_small,2016, 0,     0,  DYNAMICS_FILTER));
-        list.add(new Pedal("Distortion",            "DS-1, 4A", R.drawable.dsa_1,   R.drawable.dsa_1_small,2017, -2,    0,  DISTORTION_OVERDRIVE));
+        list.add(new Pedal("Distortion",            "DS-1-4A",  R.drawable.dsa_1,   R.drawable.dsa_1_small,2017, -2,    0,  DISTORTION_OVERDRIVE));
         list.add(new Pedal("Angry Driver",          "JB-2",     R.drawable.jb_1,    R.drawable.jb_1_small, 2017, 0,     R.string.jb_2,  DISTORTION_OVERDRIVE));
-        list.add(new Pedal("Metal Zone",            "MT-2W",    R.drawable.mt_2w,   R.drawable.mt_2w_small,-1, 0,       R.string.mt_2w,  DISTORTION_OVERDRIVE, WAZA_CRAFT));
-        list.add(new Pedal("Digital Delay",         "DD-8",     R.drawable.dd_8,    R.drawable.dd_8_small, -1, 0,       0,  DELAY_REVERB));
-        list.add(new Pedal("Digital Delay",         "DD-3T",    R.drawable.dd_3t,   R.drawable.dd_3t_small,-1, 0,       0,  DELAY_REVERB));
-        list.add(new Pedal("Dimension C",           "DC-2W",    R.drawable.dc_2w,   R.drawable.dc_2w_small,-1, 0,       0,  CHORUS, PITCH_MODULATION, WAZA_CRAFT));
-        list.add(new Pedal("Synthesizer",           "SY-1",     R.drawable.sy_1,    R.drawable.sy_1_small, -1, 0,       0,  OTHERS));
-        list.add(new Pedal("Octaver",               "OC-5",     R.drawable.oc_5,    R.drawable.oc_5_small, -1, 0,       0,  PITCH_MODULATION));
-        list.add(new Pedal("Loop Station",          "RC-5",     R.drawable.rc_5,    R.drawable.rc_5_small, -1, 0,       0,  OTHERS));
+        list.add(new Pedal("Metal Zone",            "MT-2W",    R.drawable.mt_2w,   R.drawable.mt_2w_small,2018, 0,       R.string.mt_2w,  DISTORTION_OVERDRIVE, WAZA_CRAFT));
+        list.add(new Pedal("Digital Delay",         "DD-8",     R.drawable.dd_8,    R.drawable.dd_8_small, 2019, 0,       0,  DELAY_REVERB));
+        list.add(new Pedal("Digital Delay",         "DD-3T",    R.drawable.dd_3t,   R.drawable.dd_3t_small,2019, 0,       0,  DELAY_REVERB));
+        list.add(new Pedal("Dimension C",           "DC-2W",    R.drawable.dc_2w,   R.drawable.dc_2w_small,2018, 0,       0,  CHORUS, PITCH_MODULATION, WAZA_CRAFT));
+        list.add(new Pedal("Synthesizer",           "SY-1",     R.drawable.sy_1,    R.drawable.sy_1_small, 2019, 0,       0,  OTHERS));
+        list.add(new Pedal("Octaver",               "OC-5",     R.drawable.oc_5,    R.drawable.oc_5_small, 2020, 0,       0,  PITCH_MODULATION));
+        list.add(new Pedal("Loop Station",          "RC-5",     R.drawable.rc_5,    R.drawable.rc_5_small, 2020, 0,       0,  OTHERS));
         list.add(new Pedal("Tone Bender",           "TB-2W",    R.drawable.tb_2w,   R.drawable.tb_2w_small, 2021, 0,    R.string.tb_2w,  DISTORTION_OVERDRIVE, WAZA_CRAFT));
+        list.add(new Pedal("Heavy Metal",           "HM-2W",    R.drawable.no_img,   R.drawable.no_img, 2021, 0,    0,  DISTORTION_OVERDRIVE, WAZA_CRAFT));
+        list.add(new Pedal("Metal Zone",            "MT-2-3A",  R.drawable.no_img,   R.drawable.no_img, 2021, -2,    0,  DISTORTION_OVERDRIVE));
+        list.add(new Pedal("Super Overdrive",       "SD-1-4A",  R.drawable.no_img,   R.drawable.no_img, 2021, -2,    0,  DISTORTION_OVERDRIVE));
         //20 Series
         list.add(new Pedal("Chorus Ensemble",       "CE-20",    R.drawable.ce_20,   R.drawable.ce_20_small, -1, -1,      R.string.ce_20, SERIES_20, CHORUS, PITCH_MODULATION));
         list.add(new Pedal("Giga Delay",            "DD-20",    R.drawable.dd_20,   R.drawable.dd_20_small, -1, -1,      0, SERIES_20, DELAY_REVERB));
@@ -211,19 +239,19 @@ public class MainViewModel extends ViewModel {
         list.add(new Pedal("V-Guitar Distortion",   "GR-D",     R.drawable.gr_d,    R.drawable.gr_d_small,  -1, -1,      0, SERIES_20, OTHERS));
         list.add(new Pedal("V-Guitar Space",        "GR-S",     R.drawable.gr_s,    R.drawable.gr_s_small,  -1, -1,      0, SERIES_20, OTHERS));
         //10 Series
-        list.add(new Pedal("Compressor Limiter",    "RCL-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, DYNAMICS_FILTER));
-        list.add(new Pedal("Graphic Equalizer",     "RGE-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, DYNAMICS_FILTER));
-        list.add(new Pedal("Digital Delay",         "RDD-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, DELAY_REVERB));
-        list.add(new Pedal("Phaser",                "RPH-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, PITCH_MODULATION));
-        list.add(new Pedal("Flanger",               "RBF-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, PITCH_MODULATION));
-        list.add(new Pedal("Digital Chorus Ensemble","RCE-10",  R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, CHORUS, PITCH_MODULATION));
-        list.add(new Pedal("Digital Reverb",        "RRV-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, DELAY_REVERB));
-        list.add(new Pedal("Overdrive / Distortion","ROD-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, DISTORTION_OVERDRIVE));
-        list.add(new Pedal("Pitch Shifter / Delay", "RPS-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, DELAY_REVERB, PITCH_MODULATION));
-        list.add(new Pedal("Preamp / Parametric EQ","RPQ-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, DYNAMICS_FILTER));
-        list.add(new Pedal("Digital Sampler / Delay","RSD-10",  R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, DELAY_REVERB));
-        list.add(new Pedal("Panning Delay",         "RPD-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, DELAY_REVERB));
-        list.add(new Pedal("Power supply",          "RPW-7",    R.drawable.no_img,  R.drawable.no_img,      -1, -1,      0, SERIES_10, OTHERS));
+        list.add(new Pedal("Compressor Limiter",    "RCL-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      R.string.rcl_10, SERIES_10, DYNAMICS_FILTER));
+        list.add(new Pedal("Graphic Equalizer",     "RGE-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      R.string.rge_10, SERIES_10, DYNAMICS_FILTER));
+        list.add(new Pedal("Digital Delay",         "RDD-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      R.string.rdd_10, SERIES_10, DELAY_REVERB));
+        list.add(new Pedal("Phaser",                "RPH-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      R.string.rph_10, SERIES_10, PITCH_MODULATION));
+        list.add(new Pedal("Flanger",               "RBF-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      R.string.rbf_10, SERIES_10, PITCH_MODULATION));
+        list.add(new Pedal("Digital Chorus Ensemble","RCE-10",  R.drawable.no_img,  R.drawable.no_img,      -1, -1,      R.string.rce_10, SERIES_10, CHORUS, PITCH_MODULATION));
+        list.add(new Pedal("Digital Reverb",        "RRV-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      R.string.rrv_10, SERIES_10, DELAY_REVERB));
+        list.add(new Pedal("Overdrive / Distortion","ROD-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      R.string.rod_10, SERIES_10, DISTORTION_OVERDRIVE));
+        list.add(new Pedal("Pitch Shifter / Delay", "RPS-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      R.string.rps_10, SERIES_10, DELAY_REVERB, PITCH_MODULATION));
+        list.add(new Pedal("Preamp / Parametric EQ","RPQ-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      R.string.rpq_10, SERIES_10, DYNAMICS_FILTER));
+        list.add(new Pedal("Digital Sampler / Delay","RSD-10",  R.drawable.no_img,  R.drawable.no_img,      -1, -1,      R.string.rsd_10, SERIES_10, DELAY_REVERB));
+        list.add(new Pedal("Panning Delay",         "RPD-10",   R.drawable.no_img,  R.drawable.no_img,      -1, -1,      R.string.rpd_10, SERIES_10, DELAY_REVERB));
+        list.add(new Pedal("Power supply",          "RPW-7",    R.drawable.no_img,  R.drawable.no_img,      -1, -1,      R.string.rpw_7, SERIES_10, OTHERS));
         return list;
     }
 

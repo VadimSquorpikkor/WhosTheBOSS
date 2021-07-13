@@ -185,12 +185,10 @@
     <string name="rpw_7">\t\t When integrating several Micro Studio Series units into a single system, connecting an AC adaptor to each can be a very bothersome task. A solution is provided by the RPW-7 Power Supply, capable of supplying up to 700mA of 9V DC power. 5 DC outputs are built-in to allow connecting 5 or more Micro Studio Series units through each unit’s adaptor input/output jacks. Another attractive feature is the RPW-7’s ability to supply power to Boss compact effect pedals which permit use with the PSA Series Adaptor. With the same design and size as the other units in the series which employ a PSA adaptor, the RPW-7 fits a rack perfectly.</string>
     <string name="rpd_10">\t\t The BOSS RPD-10 is a completely new type machine that can create a panning delay effect which was only possible by using two delay machines.\n
         \t\t - The unit can create as long as two second delay time. -> The best possible panning effect can be obtained.\n
-        \t\t - This unit features Chorus mode. -> It can be used as a stereo chorus effect
-        \t\t - The Direct Cancel Switch is provided. -> The unit can send only effect sound to a mixer.
-        \t\t - This unit features the Input Level Selector Switch and both a standard phone jack and a pin jack for input. -> Not only a musical instrument but also audio equipment can be used with this unit/
+        \t\t - This unit features Chorus mode. -> It can be used as a stereo chorus effect\n
+        \t\t - The Direct Cancel Switch is provided. -> The unit can send only effect sound to a mixer.\n
+        \t\t - This unit features the Input Level Selector Switch and both a standard phone jack and a pin jack for input. -> Not only a musical instrument but also audio equipment can be used with this unit/\n
         \t\t - Using the optional adaptor RAD-10, this unit can be mounted on a standard 19″ rack (EIA).
-        \t\t -
-
     </string>
 
 

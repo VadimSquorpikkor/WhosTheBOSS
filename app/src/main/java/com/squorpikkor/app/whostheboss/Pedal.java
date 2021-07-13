@@ -34,7 +34,7 @@ class Pedal {
     /**Год окончания продаж, если = 0, значит ещё продается*/
     private final int yearEnd;
     /**моё отношение: хочу купить, есть такая, не нужна, хочу такую, но дорого, есть более лучшая (не всегда более новая) версия, не знаю зачем и т.д. Будет задаваться static final String*/
-    private String status;
+    private int status;
     /**Описание*/
     private final int description;
 
@@ -52,11 +52,11 @@ class Pedal {
         for (int cat:cats) Category.add(cat);
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
