@@ -3,6 +3,7 @@ package com.squorpikkor.app.whostheboss;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Objects;
 
 import static com.squorpikkor.app.whostheboss.Pedal.ACOUSTIC;
@@ -20,6 +21,14 @@ import static com.squorpikkor.app.whostheboss.Pedal.SERIES_20;
 import static com.squorpikkor.app.whostheboss.Pedal.WAZA_CRAFT;
 
 public class MainViewModel extends ViewModel {
+
+    ArrayList<Integer> idList;
+
+    public MainViewModel() {
+        idList = new ArrayList<>();
+        idList.add(1);
+
+    }
 
     private MutableLiveData<ArrayList<Pedal>> pedalList;
 
@@ -81,16 +90,38 @@ public class MainViewModel extends ViewModel {
         return pedalList;
     }
 
+    public MutableLiveData<ArrayList<Pedal>> getFavoritePedalList() {
+//    public MutableLiveData<ArrayList<Pedal>> getPedalList() {
+        if (pedalList == null) {
+            pedalList = new MutableLiveData<>();
+            ArrayList<Pedal> favList = new ArrayList<>();
+            for (Pedal pedal:getAll()) {
+                if (pedal.isFavorite()) {
+                    favList.add(pedal);
+                }
+            }
+            pedalList.setValue(favList);
+        }
+        return pedalList;
+    }
+
+
+
+
+    private boolean checkFav(int id) {
+        return idList.contains(id);
+    }
+
     private ArrayList<Pedal> getAll() {
         ArrayList<Pedal> list = new ArrayList<>();
-        list.add(new Pedal("Over Drive",            "OD-1",     R.drawable.od_1,    R.drawable.od_1_small, 1977, 1988,  0,  DISTORTION_OVERDRIVE));
+        list.add(new Pedal(checkFav(1), "Over Drive",            "OD-1",     R.drawable.od_1,    R.drawable.od_1_small, 1977, 1988,  0,  DISTORTION_OVERDRIVE));
         list.add(new Pedal("Spectrum",              "SP-1",     R.drawable.sp_1,    R.drawable.sp_1_small, 1977, 1981,  0,  PITCH_MODULATION));
         list.add(new Pedal("Phaser",                "PH-1",     R.drawable.ph_1,    R.drawable.ph_1_small, 1977, 1981,  0,  PITCH_MODULATION));
         list.add(new Pedal("Phaser",                "PH-1R",     R.drawable.ph_1,    R.drawable.ph_1_small, 1980, 1985,  0,  PITCH_MODULATION));
         list.add(new Pedal("Graphic Equalizer",     "GE-6",     R.drawable.ge_6,    R.drawable.ge_6_small, 1978, 1981,  0,  DYNAMICS_FILTER));
         list.add(new Pedal("T-Wah",                 "TW-1",     R.drawable.tw_1,    R.drawable.tw_1_small, 1978, 1988,  0,  DYNAMICS_FILTER));
         list.add(new Pedal("Touch Wah",             "TW-1",     R.drawable.tow_1,   R.drawable.tow_1_small,1978, 1988,  0,  DYNAMICS_FILTER));
-        list.add(new Pedal("Distortion",            "DS-1",     R.drawable.ds_1,    R.drawable.ds_1_small, 1978, 0,     R.string.ds_1,  DISTORTION_OVERDRIVE));
+        list.add(new Pedal(checkFav(8), "Distortion",            "DS-1",     R.drawable.ds_1,    R.drawable.ds_1_small, 1978, 0,     R.string.ds_1,  DISTORTION_OVERDRIVE));
         list.add(new Pedal("Compression Sustainer", "CS-1",     R.drawable.cs_1,    R.drawable.cs_1_small, 1978, 1982,  0,  DYNAMICS_FILTER));
         list.add(new Pedal("Noise Gate",            "NF-1",     R.drawable.nf_1,    R.drawable.nf_1_small, 1979, 1982,  0,  OTHERS));
         list.add(new Pedal("Slow Gear",             "SG-1",     R.drawable.sg_1,    R.drawable.sg_1_small, 1979, 1982,  0,  DYNAMICS_FILTER));
@@ -218,9 +249,9 @@ public class MainViewModel extends ViewModel {
         list.add(new Pedal("Octaver",               "OC-5",     R.drawable.oc_5,    R.drawable.oc_5_small, 2020, 0,       0,  PITCH_MODULATION));
         list.add(new Pedal("Loop Station",          "RC-5",     R.drawable.rc_5,    R.drawable.rc_5_small, 2020, 0,       0,  OTHERS));
         list.add(new Pedal("Tone Bender",           "TB-2W",    R.drawable.tb_2w,   R.drawable.tb_2w_small, 2021, 0,    R.string.tb_2w,  DISTORTION_OVERDRIVE, WAZA_CRAFT));
-        list.add(new Pedal("Heavy Metal",           "HM-2W",    R.drawable.no_img,   R.drawable.no_img, 2021, 0,    0,  DISTORTION_OVERDRIVE, WAZA_CRAFT));
-        list.add(new Pedal("Metal Zone",            "MT-2-3A",  R.drawable.no_img,   R.drawable.no_img, 2021, -2,    0,  DISTORTION_OVERDRIVE));
-        list.add(new Pedal("Super Overdrive",       "SD-1-4A",  R.drawable.no_img,   R.drawable.no_img, 2021, -2,    0,  DISTORTION_OVERDRIVE));
+        list.add(new Pedal("Heavy Metal",           "HM-2W",    R.drawable.hm_2w,   R.drawable.hm_2w_small, 2021, 0,    0,  DISTORTION_OVERDRIVE, WAZA_CRAFT));
+        list.add(new Pedal("Metal Zone",            "MT-2-3A",  R.drawable.mt_2_a3, R.drawable.mt_2_a3_small, 2021, -2,    0,  DISTORTION_OVERDRIVE));
+        list.add(new Pedal("Super Overdrive",       "SD-1-4A",  R.drawable.sd_1_4a,  R.drawable.sd_1_4a_small, 2021, -2,    0,  DISTORTION_OVERDRIVE));
         //20 Series
         list.add(new Pedal("Chorus Ensemble",       "CE-20",    R.drawable.ce_20,   R.drawable.ce_20_small, -1, -1,      R.string.ce_20, SERIES_20, CHORUS, PITCH_MODULATION));
         list.add(new Pedal("Giga Delay",            "DD-20",    R.drawable.dd_20,   R.drawable.dd_20_small, -1, -1,      0, SERIES_20, DELAY_REVERB));
