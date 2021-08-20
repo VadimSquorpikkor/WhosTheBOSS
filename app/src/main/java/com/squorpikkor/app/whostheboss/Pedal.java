@@ -40,6 +40,8 @@ class Pedal {
 
     private boolean isFavorite;
 
+    private int id;
+
     private final ArrayList<Integer> Category;
 
     public Pedal(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int description, int... cats) {
@@ -56,6 +58,19 @@ class Pedal {
 
     public Pedal(boolean favorite, String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int description, int... cats) {
         this.isFavorite = favorite;
+        this.description = description;
+        this.name = name;
+        this.shortName = shortName;
+        this.image = image;
+        this.smallImage = smallImage;
+        this.yearStart = yearStart;
+        this.yearEnd = yearEnd;
+        this.Category = new ArrayList<>();
+        for (int cat:cats) Category.add(cat);
+    }
+
+    public Pedal(int id, String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int description, int... cats) {
+        this.id = id;
         this.description = description;
         this.name = name;
         this.shortName = shortName;
@@ -113,5 +128,9 @@ class Pedal {
 
     public void setFavorite(boolean favorite) {
         isFavorite = favorite;
+    }
+
+    public int getId() {
+        return id;
     }
 }

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,8 @@ public class PedalListFragment extends Fragment {
     PedalAdapter pedalAdapter;
     MainViewModel mViewModel;
     View view;
+
+    boolean favButtonState;
 
     HashMap<String, Integer> catMap;
 
@@ -132,6 +135,12 @@ public class PedalListFragment extends Fragment {
             }
         };
         spinner.setOnItemSelectedListener(itemSelectedListener);
+
+        view.findViewById(R.id.favorite).setOnClickListener(v -> {
+            favButtonState = !favButtonState;
+            if (favButtonState) mViewModel.getFavoritePedalList();
+            else mViewModel.setPedalListByCategory(ALL/*catMap.get(item)*/);
+        });
 
         return view;
     }
