@@ -27,6 +27,9 @@ public class Utils {
     }
 
     public static String getDescriptionResource(String name) {
+        name = name.toLowerCase();
+        name = name.replace("-", "_");
+
         int resID = getResId(name, "string");
         if (resID==0) return "";
         return App.getContext().getString(resID);

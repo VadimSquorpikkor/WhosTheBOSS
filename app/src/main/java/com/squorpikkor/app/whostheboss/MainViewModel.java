@@ -1,6 +1,7 @@
 package com.squorpikkor.app.whostheboss;
 
 import android.app.Application;
+import android.os.AsyncTask;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -10,6 +11,7 @@ import androidx.lifecycle.LiveData;
 import com.squorpikkor.app.whostheboss.data.DeviceDatabase;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class MainViewModel  extends AndroidViewModel {
 
@@ -21,14 +23,10 @@ public class MainViewModel  extends AndroidViewModel {
     public MainViewModel(@NonNull Application application) {
         super(application);
         database = DeviceDatabase.getInstance(getApplication());
-//        new InsertTask().execute();
-        //database.deviceDAO().insertAll(DataEntity.getAll());
         deviceList = database.deviceDAO().getAllDevices();
         Log.e(TAG, "MainViewModel: deviceList - "+deviceList);
         Log.e(TAG, "MainViewModel: deviceList.getValue() - "+deviceList.getValue());
-//        Log.e(TAG, "MainViewModel: "+deviceList.getValue().size());
-
-
+        //deviceList = getDevicesByCategory(16);
     }
 
     public void openDeviceInfo(Device device) {
@@ -40,11 +38,28 @@ public class MainViewModel  extends AndroidViewModel {
         return deviceList;
     }
 
-    /*private static class InsertTask extends AsyncTask<Void, Void, Void> {
+
+    public LiveData<List<Device>> getDevicesByCategory(int cat) {
+        Log.e(TAG, "♦getDevicesByCategory: "+6144%(2048*2));
+        try {
+            return new InsertTask().execute(cat).get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private static class InsertTask extends AsyncTask<Integer, Void, LiveData<List<Device>>> {
         @Override
-        protected Void doInBackground(Void...v) {
-            database.deviceDAO().insertAll(DataEntity.getAll());
+        protected LiveData<List<Device>> doInBackground(Integer... ints) {
+            if (ints != null && ints.length > 0) {
+                Log.e("TAG", "doInBackground: ");
+                return database.deviceDAO().getDevicesByCategory(ints[0]);
+            }
             return null;
         }
-    }*/
+    }
+
 }

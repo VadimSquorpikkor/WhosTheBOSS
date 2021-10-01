@@ -37,20 +37,7 @@ public class Device {
     /**Короткое имя (DS-1)*/
     private String shortName;
 
-    /**Ссылка на картинку*/
-    private int image;
-
-    /**Ссылка на картинку*/
-    private int smallImage;
-
-    /**Год начала продаж*/
-    private int yearStart;
-
-    /**Год окончания продаж, если = 0, значит ещё продается*/
-    private int yearEnd;
-
-    /**Описание*/
-    private int description;
+    private String years;
 
     /**моё отношение: хочу купить, есть такая, не нужна*/
     private int status;
@@ -58,51 +45,27 @@ public class Device {
     /**Категория: ревер, дисторшн, waza craft...*/
     private int category;
 
-    private String years;
 
-    @Ignore
-    public Device(String name, String shortName, String years, int category) {
+
+    public Device(String name, String shortName, String years, int status, int category) {
         this.name = name;
         this.shortName = shortName;
         this.years = years;
-        this.category = category;
-    }
-
-    @Ignore
-    public Device(String name, String shortName, int yearStart, int yearEnd, int category) {
-        this.name = name;
-        this.shortName = shortName;
-        this.yearStart = yearStart;
-        this.yearEnd = yearEnd;
-        this.category = category;
-    }
-
-    public Device(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int description, int status, int category) {
-        this.name = name;
-        this.shortName = shortName;
-        this.image = image;
-        this.smallImage = smallImage;
-        this.yearStart = yearStart;
-        this.yearEnd = yearEnd;
-        this.description = description;
         this.status = status;
         this.category = category;
     }
 
     /*@Ignore
-    public Device(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int description, int status, int... cats) {
+    public Device(String name, String shortName, String years, int status, int... cats) {
         int category = 0;
         for (int cat:cats) category+=cat;
         this.category = category;
-        new Device(name, shortName, image, smallImage, yearStart, yearEnd, description, status, category);
-    }*/
 
-    /*@Ignore
-    public Device(String name, String shortName, int image, int smallImage, int yearStart, int yearEnd, int description, int... cats) {
-        int category = 0;
-        for (int cat:cats) category+=cat;
+        this.name = name;
+        this.shortName = shortName;
+        this.years = years;
+        this.status = status;
         this.category = category;
-        new Device(name, shortName, image, smallImage, yearStart, yearEnd, 0, description, category);
     }*/
 
     public int getId() {
@@ -129,46 +92,6 @@ public class Device {
         this.shortName = shortName;
     }
 
-    public int getImage() {
-        return image;
-    }
-
-    public void setImage(int image) {
-        this.image = image;
-    }
-
-    public int getSmallImage() {
-        return smallImage;
-    }
-
-    public void setSmallImage(int smallImage) {
-        this.smallImage = smallImage;
-    }
-
-    public int getYearStart() {
-        return yearStart;
-    }
-
-    public void setYearStart(int yearStart) {
-        this.yearStart = yearStart;
-    }
-
-    public int getYearEnd() {
-        return yearEnd;
-    }
-
-    public void setYearEnd(int yearEnd) {
-        this.yearEnd = yearEnd;
-    }
-
-    public int getDescription() {
-        return description;
-    }
-
-    public void setDescription(int description) {
-        this.description = description;
-    }
-
     public int getStatus() {
         return status;
     }
@@ -183,5 +106,13 @@ public class Device {
 
     public void setCategory(int category) {
         this.category = category;
+    }
+
+    public String getYears() {
+        return years;
+    }
+
+    public void setYears(String years) {
+        this.years = years;
     }
 }
