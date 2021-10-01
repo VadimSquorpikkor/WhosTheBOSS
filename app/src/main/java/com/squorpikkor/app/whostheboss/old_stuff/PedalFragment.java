@@ -1,4 +1,4 @@
-package com.squorpikkor.app.whostheboss;
+package com.squorpikkor.app.whostheboss.old_stuff;
 
 import android.os.Bundle;
 
@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.squorpikkor.app.whostheboss.R;
 
 public class
 PedalFragment extends Fragment {
@@ -65,7 +67,7 @@ PedalFragment extends Fragment {
         else position = 0;
         descView.setVisibility(View.GONE);
 
-        MainViewModel model = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
+        MainViewModel_old model = new ViewModelProvider(requireActivity()).get(MainViewModel_old.class);
         Pedal pedal = model.getPedal(position);
         nameView.setText(pedal.getName());
         shortNameView.setText(pedal.getShortName());

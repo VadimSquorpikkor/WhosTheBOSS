@@ -6,6 +6,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
 import android.os.Bundle;
 
+import com.squorpikkor.app.whostheboss.old_stuff.MainViewModel_old;
+
 public class MainActivity extends AppCompatActivity {
 
     public MainViewModel mViewModel;
@@ -22,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager manager = getSupportFragmentManager();
         Fragment fragment = manager.findFragmentById(R.id.fragment_container);
         if (fragment == null) {
-            fragment = PedalListFragment.newInstance();
+//            fragment = PedalListFragment.newInstance();
+            fragment = DeviceFragment.newInstance();
             //fill main container
             manager.beginTransaction().add(R.id.fragment_container, fragment).commit();
         }

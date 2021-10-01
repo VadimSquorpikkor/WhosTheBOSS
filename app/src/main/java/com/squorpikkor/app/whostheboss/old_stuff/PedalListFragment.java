@@ -1,4 +1,4 @@
-package com.squorpikkor.app.whostheboss;
+package com.squorpikkor.app.whostheboss.old_stuff;
 
 import android.os.Bundle;
 
@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,26 +19,28 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-import static com.squorpikkor.app.whostheboss.Pedal.ACOUSTIC;
-import static com.squorpikkor.app.whostheboss.Pedal.ALL;
-import static com.squorpikkor.app.whostheboss.Pedal.AMP_EMULATOR;
-import static com.squorpikkor.app.whostheboss.Pedal.BASS_PEDALS;
-import static com.squorpikkor.app.whostheboss.Pedal.CHORUS;
-import static com.squorpikkor.app.whostheboss.Pedal.DELAY_REVERB;
-import static com.squorpikkor.app.whostheboss.Pedal.DISTORTION_OVERDRIVE;
-import static com.squorpikkor.app.whostheboss.Pedal.DYNAMICS_FILTER;
-import static com.squorpikkor.app.whostheboss.Pedal.OTHERS;
-import static com.squorpikkor.app.whostheboss.Pedal.PITCH_MODULATION;
-import static com.squorpikkor.app.whostheboss.Pedal.SERIES_10;
-import static com.squorpikkor.app.whostheboss.Pedal.SERIES_20;
-import static com.squorpikkor.app.whostheboss.Pedal.WAZA_CRAFT;
+import static com.squorpikkor.app.whostheboss.old_stuff.Pedal.ACOUSTIC;
+import static com.squorpikkor.app.whostheboss.old_stuff.Pedal.ALL;
+import static com.squorpikkor.app.whostheboss.old_stuff.Pedal.AMP_EMULATOR;
+import static com.squorpikkor.app.whostheboss.old_stuff.Pedal.BASS_PEDALS;
+import static com.squorpikkor.app.whostheboss.old_stuff.Pedal.CHORUS;
+import static com.squorpikkor.app.whostheboss.old_stuff.Pedal.DELAY_REVERB;
+import static com.squorpikkor.app.whostheboss.old_stuff.Pedal.DISTORTION_OVERDRIVE;
+import static com.squorpikkor.app.whostheboss.old_stuff.Pedal.DYNAMICS_FILTER;
+import static com.squorpikkor.app.whostheboss.old_stuff.Pedal.OTHERS;
+import static com.squorpikkor.app.whostheboss.old_stuff.Pedal.PITCH_MODULATION;
+import static com.squorpikkor.app.whostheboss.old_stuff.Pedal.SERIES_10;
+import static com.squorpikkor.app.whostheboss.old_stuff.Pedal.SERIES_20;
+import static com.squorpikkor.app.whostheboss.old_stuff.Pedal.WAZA_CRAFT;
+
+import com.squorpikkor.app.whostheboss.R;
 
 public class PedalListFragment extends Fragment {
 
     ListView lvMain;
     ArrayList<Pedal> sourceList = new ArrayList<>();
     PedalAdapter pedalAdapter;
-    MainViewModel mViewModel;
+    MainViewModel_old mViewModel;
     View view;
 
     boolean favButtonState;
@@ -78,7 +79,7 @@ public class PedalListFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_pedal_list, container, false);
 
-        mViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
+        mViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel_old.class);
 
         // находим список
         lvMain = view.findViewById(R.id.pedal_list);

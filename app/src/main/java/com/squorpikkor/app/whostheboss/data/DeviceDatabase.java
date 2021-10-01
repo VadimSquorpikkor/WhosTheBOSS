@@ -1,0 +1,52 @@
+package com.squorpikkor.app.whostheboss.data;
+
+import android.content.Context;
+import android.util.Log;
+
+import androidx.annotation.NonNull;
+import androidx.room.Database;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
+import androidx.sqlite.db.SupportSQLiteDatabase;
+
+import com.squorpikkor.app.whostheboss.Device;
+
+import java.util.concurrent.Executors;
+
+
+@Database(entities = {Device.class}, version = 1, exportSchema = false)
+public abstract class DeviceDatabase extends RoomDatabase {
+    private static DeviceDatabase movieDatabase;
+    public static final String DB_NAME = "devices.db";
+    public static final String DEVICES = "devices";
+    public static final Object LOCK = new Object();
+
+    public static DeviceDatabase getInstance(Context context) {
+        synchronized (LOCK) {
+            if (movieDatabase == null) {
+                movieDatabase = Room.databaseBuilder(context, DeviceDatabase.class, DB_NAME)
+                        .addCallback(new Callback() {
+                                         @Override
+                                         public void onCreate(@NonNull SupportSQLiteDatabase db) {
+                                             super.onCreate(db);
+                                             Executors.newSingleThreadScheduledExecutor().execute(new Runnable() {
+                                                 @Override
+                                                 public void run() {
+                                                     Log.e("TAG", "run: CALLBACK!!!");
+                                                     getInstance(context).deviceDAO().insertAll(DataEntity.getAll());
+                                                 }
+                                             });
+                                         }
+                                     }
+                        )
+                        .fallbackToDestructiveMigration()//Это добавлено для того, чтобы при изменении версии на новую, старые данные вместе с таблицами автоматом удалялись (иначе нужно вручную удалять) и новые таблицы создавались
+                        .build();
+            }
+            return movieDatabase;
+        }
+
+    }
+
+    public abstract DeviceDAO deviceDAO();
+
+}

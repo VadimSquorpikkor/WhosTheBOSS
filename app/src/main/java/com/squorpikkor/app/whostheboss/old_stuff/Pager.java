@@ -1,4 +1,4 @@
-package com.squorpikkor.app.whostheboss;
+package com.squorpikkor.app.whostheboss.old_stuff;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

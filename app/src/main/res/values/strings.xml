@@ -195,5 +195,6 @@
     <string name="template">\t\t \n
         \t\t \n
         \t\t - </string>
+    <string name="device_image">DeviceImage</string>
 
 </resources>
