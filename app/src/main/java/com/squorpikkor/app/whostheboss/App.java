@@ -7,6 +7,7 @@ import android.util.Log;
 public class App extends Application {
 
     private static Application mApplication;
+    public static final String TAG = "tag";
 
     @Override
     public void onCreate() {

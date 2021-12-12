@@ -1,6 +1,7 @@
 package com.squorpikkor.app.whostheboss.data;
 
 import static com.squorpikkor.app.whostheboss.Device.ACOUSTIC;
+import static com.squorpikkor.app.whostheboss.Device.ALL;
 import static com.squorpikkor.app.whostheboss.Device.AMP_EMULATOR;
 import static com.squorpikkor.app.whostheboss.Device.BASS_PEDALS;
 import static com.squorpikkor.app.whostheboss.Device.CHORUS;
@@ -13,9 +14,26 @@ import static com.squorpikkor.app.whostheboss.Device.SERIES_20;
 import static com.squorpikkor.app.whostheboss.Device.WAZA_CRAFT;
 import com.squorpikkor.app.whostheboss.Device;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class DataEntity {
 
-    static Device[] getAll() {
+    public ArrayList<Device> getAllDev() {
+        return new ArrayList<>(Arrays.asList(getAll()));
+    }
+
+    ////("SELECT * FROM devices WHERE category%(:cat*2) >= :cat")
+    public ArrayList<Device> getAllDevByCat(int selectedCat) {
+        if (selectedCat==ALL) return new ArrayList<>(Arrays.asList(getAll()));
+        ArrayList<Device> list = new ArrayList<>();
+        for (Device dev:getAll()) {
+            if (dev.getCategory()%(selectedCat*2) >= selectedCat) list.add(dev);
+        }
+        return list;
+    }
+
+    private Device[] getAll() {
         return new Device[]{
         new Device("Over Drive",                "OD-1",     "1977-1988", 0,     DISTORTION_OVERDRIVE),
         new Device("Spectrum",                  "SP-1",     "1977-1981", 0,     PITCH_MODULATION),

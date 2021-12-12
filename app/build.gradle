@@ -53,5 +53,8 @@ dependencies {
     implementation "androidx.room:room-paging:2.4.0-alpha05"
     //-------------------------------------------------------------------
 
+    //Для Navigation
+//    implementation "androidx.navigation:navigation-fragment:2.3.5"
+//    implementation "androidx.navigation:navigation-ui:2.3.5"
 
 }

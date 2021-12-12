@@ -23,13 +23,21 @@ public class AdapterDevice extends RecyclerView.Adapter<AdapterDevice.DeviceView
 
     /**Лисенер, который будет возвращать объект Nuclide по позиции выбранного элемента*/
     private OnDeviceClickListener onDeviceClickListener;
+    private OnItemClickListener onItemClickListener;
 
     public interface OnDeviceClickListener {
         void onDeviceClick(Device device);
     }
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
 
     public void setOnDeviceClickListener(OnDeviceClickListener onDeviceClickListener) {
         this.onDeviceClickListener = onDeviceClickListener;
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -75,6 +83,7 @@ public class AdapterDevice extends RecyclerView.Adapter<AdapterDevice.DeviceView
 
             itemView.setOnClickListener(view -> {
                 if (onDeviceClickListener != null) onDeviceClickListener.onDeviceClick(list.get(getAbsoluteAdapterPosition()));
+                if (onItemClickListener != null) onItemClickListener.onItemClick(getAbsoluteAdapterPosition());
             });
         }
     }

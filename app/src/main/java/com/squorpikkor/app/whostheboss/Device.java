@@ -1,14 +1,9 @@
 package com.squorpikkor.app.whostheboss;
 
-import static com.squorpikkor.app.whostheboss.data.DeviceDatabase.DEVICES;
 
-import androidx.room.Entity;
-import androidx.room.Ignore;
-import androidx.room.PrimaryKey;
-
-@Entity(tableName = DEVICES)
 public class Device {
 
+    public static final int ALL = 1;
     public static final int DISTORTION_OVERDRIVE = 4;
     public static final int DELAY_REVERB = 8;
     public static final int PITCH_MODULATION = 16;//octave, chorus, vibrato, flanger, multi overtone, phase shifter, harmonist, tremolo, rotary, slicer
@@ -28,7 +23,6 @@ public class Device {
     public static final int HAVE_GOT = 2;
     public static final int WISH_LIST = 4;
 
-    @PrimaryKey(autoGenerate = true)
     private int id;
 
     /**Имя (Distortion)*/
@@ -45,6 +39,7 @@ public class Device {
     /**Категория: ревер, дисторшн, waza craft...*/
     private int category;
 
+    private int description;
 
 
     public Device(String name, String shortName, String years, int status, int category) {
@@ -55,18 +50,14 @@ public class Device {
         this.category = category;
     }
 
-    /*@Ignore
-    public Device(String name, String shortName, String years, int status, int... cats) {
-        int category = 0;
-        for (int cat:cats) category+=cat;
-        this.category = category;
-
+    public Device(String name, String shortName, String years, int status, int category, int description) {
         this.name = name;
         this.shortName = shortName;
         this.years = years;
         this.status = status;
         this.category = category;
-    }*/
+        this.description = description;
+    }
 
     public int getId() {
         return id;
@@ -114,5 +105,13 @@ public class Device {
 
     public void setYears(String years) {
         this.years = years;
+    }
+
+    public int getDescription() {
+        return description;
+    }
+
+    public void setDescription(int description) {
+        this.description = description;
     }
 }

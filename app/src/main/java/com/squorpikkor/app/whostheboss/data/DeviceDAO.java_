@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Dao
-public interface DeviceDAO {
+interface DeviceDAO {
     @Query("SELECT * FROM devices")
     LiveData<List<Device>> getAllDevices();
 
@@ -27,7 +27,10 @@ public interface DeviceDAO {
 //    @Query("SELECT * FROM devices WHERE category >= :cat AND category < :cat*2") //не работает
 //    @Query("SELECT * FROM devices WHERE category >= :cat AND category%:cat >= :cat") //не работает
 //    @Query("SELECT * FROM devices WHERE category >= :cat AND category%(:cat*2) >= :cat") //РАБОТАЕТ
+    //todo а можно проще, сравнивать бит 2-значного числа (например 00010) по позиции, которая равна категории (например 2).
+    // Это то же самое, только мы не переводим в двузначное через остаток от деления, а сразу работаем с двузначным числом
     @Query("SELECT * FROM devices WHERE category%(:cat*2) >= :cat")
+//    @Query("SELECT * FROM devices WHERE category=:cat")
     LiveData<List<Device>> getDevicesByCategory(int cat);
 
     @Insert
