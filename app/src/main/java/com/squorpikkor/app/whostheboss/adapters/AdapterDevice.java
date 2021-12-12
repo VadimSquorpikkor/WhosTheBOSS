@@ -1,6 +1,7 @@
 package com.squorpikkor.app.whostheboss.adapters;
 
 import android.annotation.SuppressLint;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,8 @@ import com.squorpikkor.app.whostheboss.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.squorpikkor.app.whostheboss.App.TAG;
 
 public class AdapterDevice extends RecyclerView.Adapter<AdapterDevice.DeviceViewHolder> {
 
@@ -44,6 +47,7 @@ public class AdapterDevice extends RecyclerView.Adapter<AdapterDevice.DeviceView
     public void setList(List<Device> list) {
         if (list==null) this.list = new ArrayList<>();
         this.list = list;
+        Log.e(TAG, "setList: "+list.size());
         notifyDataSetChanged();
     }
 
@@ -57,6 +61,7 @@ public class AdapterDevice extends RecyclerView.Adapter<AdapterDevice.DeviceView
     @Override
     public void onBindViewHolder(@NonNull DeviceViewHolder holder, int position) {
         Device device = list.get(position);
+        Log.e(TAG, "onBindViewHolder: "+position);
 //        holder.img.setImageResource(device.getSmallImage());
         holder.img.setImageResource(Utils.getSmallImage(device.getShortName()));
         holder.shortName.setText(device.getShortName());

@@ -72,15 +72,15 @@ public class DeviceFragment extends Fragment {
 
         Spinner spinner = view.findViewById(R.id.spinner);
         ArrayList<String> newList = new ArrayList<>(spinnerList);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(requireActivity(), android.R.layout.simple_spinner_item, newList);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(requireActivity(), android.R.layout.simple_spinner_item, newList);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(spinnerAdapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String item = (String)adapterView.getItemAtPosition(i);
                 Log.e("TAG", "onItemSelected: "+catMap.get(item));
-                mViewModel.setCategory(catMap.get(item));
+                //TODO mViewModel.setCategory(catMap.get(item));
             }
 
             @Override

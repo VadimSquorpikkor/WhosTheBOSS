@@ -1,6 +1,8 @@
 package com.squorpikkor.app.whostheboss;
 
 import android.app.Application;
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
@@ -9,6 +11,8 @@ import androidx.lifecycle.MutableLiveData;
 import com.squorpikkor.app.whostheboss.data.DataEntity;
 
 import java.util.List;
+
+import static com.squorpikkor.app.whostheboss.App.TAG;
 
 public class MainViewModel  extends AndroidViewModel {
 
@@ -21,6 +25,7 @@ public class MainViewModel  extends AndroidViewModel {
         dataEntity = new DataEntity();
         deviceList = new MutableLiveData<>();
         deviceList.setValue(dataEntity.getAllDev());
+        Log.e(TAG, "MainViewModel: "+deviceList.getValue().size());
     }
 
     public void openDeviceInfo(int position) {
