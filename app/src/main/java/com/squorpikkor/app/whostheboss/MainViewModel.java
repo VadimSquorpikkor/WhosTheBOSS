@@ -45,6 +45,7 @@ public class MainViewModel  extends AndroidViewModel {
     }
 
     public void setCategory(int cat) {
+        Log.e(TAG, "♦setCategory: "+cat);
         deviceList.setValue(dataEntity.getAllDevByCat(cat));
     }
 

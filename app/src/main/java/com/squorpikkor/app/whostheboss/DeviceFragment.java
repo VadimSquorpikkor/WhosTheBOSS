@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import static android.text.util.Linkify.ALL;
+import static com.squorpikkor.app.whostheboss.Device.ALL;
 import static com.squorpikkor.app.whostheboss.Device.ACOUSTIC;
 import static com.squorpikkor.app.whostheboss.Device.AMP_EMULATOR;
 import static com.squorpikkor.app.whostheboss.Device.BASS_PEDALS;
@@ -80,7 +80,7 @@ public class DeviceFragment extends Fragment {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String item = (String)adapterView.getItemAtPosition(i);
                 Log.e("TAG", "onItemSelected: "+catMap.get(item));
-                //TODO mViewModel.setCategory(catMap.get(item));
+                mViewModel.setCategory(catMap.get(item));
             }
 
             @Override

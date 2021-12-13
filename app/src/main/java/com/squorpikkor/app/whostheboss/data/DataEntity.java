@@ -16,6 +16,7 @@ import static com.squorpikkor.app.whostheboss.Device.PITCH_MODULATION;
 import static com.squorpikkor.app.whostheboss.Device.SERIES_20;
 import static com.squorpikkor.app.whostheboss.Device.WAZA_CRAFT;
 import com.squorpikkor.app.whostheboss.Device;
+import com.squorpikkor.app.whostheboss.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -157,7 +158,7 @@ public class DataEntity {
         list.add(new Device("Tera Echo",                 "TE-2",     "2013-now",  0,     DELAY_REVERB));
         list.add(new Device("Adaptive Distortion",       "DA-2",     "2013-2014", 0,     DISTORTION_OVERDRIVE));
         list.add(new Device("Multi Overtone",            "MO-2",     "2013-now",  0,     PITCH_MODULATION));
-        list.add(new Device("OverDrive",                 "OD-1X",    "2014-now",  0,     DISTORTION_OVERDRIVE));
+        list.add(new Device("OverDrive",                 "OD-1X",    "2014-now",  0,     DISTORTION_OVERDRIVE, R.string.od_1x));
         list.add(new Device("Distortion",                "DS-1X",    "2014-now",  0,     DISTORTION_OVERDRIVE));
         list.add(new Device("Blues Driver",              "BD-2W",    "2014-now",  0, DISTORTION_OVERDRIVE + WAZA_CRAFT));
         list.add(new Device("SUPER OverDrive",           "SD-1W",    "2014-now",  0, DISTORTION_OVERDRIVE + WAZA_CRAFT));

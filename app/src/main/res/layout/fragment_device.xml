@@ -15,16 +15,12 @@
         >
 
         <Spinner
+            android:background="@drawable/edit_text_field"
             android:id="@+id/spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_margin="10dp"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="button"/>
 
     </LinearLayout>
 
