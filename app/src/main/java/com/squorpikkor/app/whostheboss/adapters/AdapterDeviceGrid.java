@@ -20,7 +20,7 @@ import java.util.List;
 
 import static com.squorpikkor.app.whostheboss.App.TAG;
 
-public class AdapterDevice extends RecyclerView.Adapter<AdapterDevice.DeviceViewHolder> {
+public class AdapterDeviceGrid extends RecyclerView.Adapter<AdapterDeviceGrid.DeviceViewHolder> {
 
     private List<Device> list = new ArrayList<>();
 
@@ -54,7 +54,7 @@ public class AdapterDevice extends RecyclerView.Adapter<AdapterDevice.DeviceView
     @NonNull
     @Override
     public DeviceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_device, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_device_grid, parent, false);
         return new DeviceViewHolder(view);
     }
 
@@ -66,7 +66,6 @@ public class AdapterDevice extends RecyclerView.Adapter<AdapterDevice.DeviceView
         holder.img.setImageResource(Utils.getSmallImage(device.getShortName()));
         holder.shortName.setText(device.getShortName());
         holder.name.setText(device.getName());
-        holder.years.setText(device.getYears());
     }
 
     @Override
@@ -78,7 +77,6 @@ public class AdapterDevice extends RecyclerView.Adapter<AdapterDevice.DeviceView
 
         ImageView img;
         TextView name;
-        TextView years;
         TextView shortName;
 
         public DeviceViewHolder(@NonNull View itemView) {
@@ -86,7 +84,6 @@ public class AdapterDevice extends RecyclerView.Adapter<AdapterDevice.DeviceView
 
             img = itemView.findViewById(R.id.image);
             name = itemView.findViewById(R.id.name);
-            years = itemView.findViewById(R.id.years);
             shortName = itemView.findViewById(R.id.short_name);
 
             itemView.setOnClickListener(view -> {

@@ -13,11 +13,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squorpikkor.app.whostheboss.adapters.AdapterDevice;
+import com.squorpikkor.app.whostheboss.adapters.AdapterDeviceGrid;
 import com.squorpikkor.app.whostheboss.pager.PagerFragment;
 
 import java.util.ArrayList;
@@ -37,6 +40,8 @@ import static com.squorpikkor.app.whostheboss.Device.PITCH_MODULATION;
 import static com.squorpikkor.app.whostheboss.Device.SERIES_10;
 import static com.squorpikkor.app.whostheboss.Device.SERIES_20;
 import static com.squorpikkor.app.whostheboss.Device.WAZA_CRAFT;
+import static com.squorpikkor.app.whostheboss.MainViewModel.GRID;
+import static com.squorpikkor.app.whostheboss.MainViewModel.LINEAR;
 
 public class DeviceFragment extends Fragment {
 
@@ -45,10 +50,12 @@ public class DeviceFragment extends Fragment {
     }
 
     private AdapterDevice adapter;
+    private AdapterDeviceGrid adapterGrid;
     MainViewModel mViewModel;
     HashMap<String, Integer> catMap;
 //    String[] spinnerList;
     ArrayList<String> spinnerList;
+    RecyclerView foundRecyclerView;
 
     @Nullable
     @Override
@@ -56,12 +63,16 @@ public class DeviceFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_device, container, false);
         mViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
 
-        RecyclerView foundRecyclerView = view.findViewById(R.id.recycler_main);
-        adapter = new AdapterDevice();
-        foundRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        foundRecyclerView.setAdapter(adapter);
-        adapter.setOnItemClickListener(this::openDeviceInfo);
-        mViewModel.getDeviceList().observe(getViewLifecycleOwner(), list -> adapter.setList(list));
+        view.findViewById(R.id.style_toggle).setOnClickListener(v->mViewModel.toggleStyle());
+
+        mViewModel.getListStyle().observe(getViewLifecycleOwner(), this::setRecycler);
+
+        foundRecyclerView = view.findViewById(R.id.recycler_main);
+//        adapter = new AdapterDevice();
+//        foundRecyclerView.setLayoutManager(linear);
+//        foundRecyclerView.setAdapter(adapter);
+//        adapter.setOnItemClickListener(this::openDeviceInfo);
+//        mViewModel.getDeviceList().observe(getViewLifecycleOwner(), list -> adapter.setList(list));
 
         initMap();
 //        spinnerList = new String[catMap.size()];
@@ -90,6 +101,25 @@ public class DeviceFragment extends Fragment {
         });
 
         return view;
+    }
+
+    private void setRecycler(Integer style) {
+        if (style == LINEAR) {
+            RecyclerView.LayoutManager linear = new LinearLayoutManager(getActivity());
+            adapter = new AdapterDevice();
+            foundRecyclerView.setLayoutManager(linear);
+            foundRecyclerView.setAdapter(adapter);
+            adapter.setOnItemClickListener(this::openDeviceInfo);
+            mViewModel.getDeviceList().observe(getViewLifecycleOwner(), list -> adapter.setList(list));
+        } else if (style == GRID) {
+            RecyclerView.LayoutManager grid = new GridLayoutManager(getActivity(), 3);
+            adapterGrid = new AdapterDeviceGrid();
+            foundRecyclerView.setLayoutManager(grid);
+            foundRecyclerView.setAdapter(adapterGrid);
+            adapterGrid.setOnItemClickListener(this::openDeviceInfo);
+            mViewModel.getDeviceList().observe(getViewLifecycleOwner(), list -> adapterGrid.setList(list));
+        }
+
     }
 
     //todo переместить в VIEW_MODEL?
