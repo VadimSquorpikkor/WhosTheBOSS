@@ -43,6 +43,8 @@ import static com.squorpikkor.app.whostheboss.Device.WAZA_CRAFT;
 import static com.squorpikkor.app.whostheboss.MainViewModel.GRID;
 import static com.squorpikkor.app.whostheboss.MainViewModel.LINEAR;
 
+import io.reactivex.internal.operators.flowable.FlowableGenerate;
+
 public class DeviceFragment extends Fragment {
 
     public static DeviceFragment newInstance() {
@@ -90,7 +92,6 @@ public class DeviceFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String item = (String)adapterView.getItemAtPosition(i);
-                Log.e("TAG", "onItemSelected: "+catMap.get(item));
                 mViewModel.setCategory(catMap.get(item));
             }
 
@@ -104,6 +105,7 @@ public class DeviceFragment extends Fragment {
     }
 
     private void setRecycler(Integer style) {
+        Log.e("TAG", "setRecycler: "+style);
         if (style == LINEAR) {
             RecyclerView.LayoutManager linear = new LinearLayoutManager(getActivity());
             adapter = new AdapterDevice();

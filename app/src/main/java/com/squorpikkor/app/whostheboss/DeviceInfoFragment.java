@@ -62,12 +62,13 @@ public class DeviceInfoFragment extends Fragment {
 
         nameView.setText(device.getName());
         shortNameView.setText(device.getShortName());
-        imageView.setImageResource(Utils.getBigImage(device.getShortName()));
+        imageView.setImageResource(Utils.getBigImage(device.getShortNameFull()));
         yearView.setText(device.getYears());
-        descText.setText(Utils.getDescriptionResource(device.getShortName()));
+        String description = Utils.getDescriptionResource(device.getShortName());
+        descText.setText(description);
 
         descSwitch.setOnClickListener(view1 -> switchDescription());
-        if (device.getDescription() == 0) {
+        if (description.length() == 0) {
             descText.setVisibility(View.GONE);
             descView.setVisibility(View.GONE);
             descSwitch.setVisibility(View.GONE);

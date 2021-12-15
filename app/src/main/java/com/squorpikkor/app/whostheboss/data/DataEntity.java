@@ -55,7 +55,7 @@ public class DataEntity {
         list.add(new Device("Phaser",                    "PH-1",     "1977-1981", 0,     PITCH_MODULATION));
         list.add(new Device("Graphic Equalizer",         "GE-6",     "1978-1981", 0,     DYNAMICS_FILTER));
         list.add(new Device("T-Wah",                     "TW-1",     "1978-1988", 0,     DYNAMICS_FILTER));
-        list.add(new Device("Touch Wah",                 "TW-1",     "1978-1988", 0,     DYNAMICS_FILTER));
+        list.add(new Device("Touch Wah",                 "TW-1_2",   "1978-1988", 0,     DYNAMICS_FILTER));
         list.add(new Device("Distortion",                "DS-1",     "1978-now",  0,     DISTORTION_OVERDRIVE));
         list.add(new Device("Compression Sustainer",     "CS-1",     "1978-1982", 0,     DYNAMICS_FILTER));
         list.add(new Device("Noise Gate",                "NF-1",     "1979-1982", 0,     OTHERS));
@@ -68,7 +68,7 @@ public class DataEntity {
         list.add(new Device("Graphic Equalizer",         "GE-7",     "1981-now",  0,     DYNAMICS_FILTER));
         list.add(new Device("Compression Sustainer",     "CS-2",     "1981-1988", 0,     DYNAMICS_FILTER));
         list.add(new Device("Vibrato",                   "VB-2",     "1982-1984", 0,     PITCH_MODULATION));
-        list.add(new Device("Octaver",                   "OC-2",     "1982-1984", 0,     PITCH_MODULATION));
+        list.add(new Device("Octaver",                   "OC-2_2",   "1982-1984", 0,     PITCH_MODULATION));
         list.add(new Device("Octave",                    "OC-2",     "1984-2003", 0,     PITCH_MODULATION));
         list.add(new Device("Power Supply & Master Switch", "PSM-5", "1982-1999", 0,     OTHERS));
         list.add(new Device("Chorus",                    "CE-3",     "1982-1989", 0,     CHORUS + PITCH_MODULATION));
@@ -158,7 +158,7 @@ public class DataEntity {
         list.add(new Device("Tera Echo",                 "TE-2",     "2013-now",  0,     DELAY_REVERB));
         list.add(new Device("Adaptive Distortion",       "DA-2",     "2013-2014", 0,     DISTORTION_OVERDRIVE));
         list.add(new Device("Multi Overtone",            "MO-2",     "2013-now",  0,     PITCH_MODULATION));
-        list.add(new Device("OverDrive",                 "OD-1X",    "2014-now",  0,     DISTORTION_OVERDRIVE, R.string.od_1x));
+        list.add(new Device("OverDrive",                 "OD-1X",    "2014-now",  0,     DISTORTION_OVERDRIVE));
         list.add(new Device("Distortion",                "DS-1X",    "2014-now",  0,     DISTORTION_OVERDRIVE));
         list.add(new Device("Blues Driver",              "BD-2W",    "2014-now",  0, DISTORTION_OVERDRIVE + WAZA_CRAFT));
         list.add(new Device("SUPER OverDrive",           "SD-1W",    "2014-now",  0, DISTORTION_OVERDRIVE + WAZA_CRAFT));

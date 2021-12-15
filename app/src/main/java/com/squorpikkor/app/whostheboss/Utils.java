@@ -1,5 +1,9 @@
 package com.squorpikkor.app.whostheboss;
 
+import android.util.Log;
+
+import io.reactivex.internal.operators.flowable.FlowableGenerate;
+
 public class Utils {
     public static int convert(int...dev) {
         int category = 0;
@@ -8,9 +12,15 @@ public class Utils {
     }
 
     public static int getSmallImage(String name) {
+        String add = "";
+        if (name.contains("_2")) add = "_2";
+        name = name.replace("_2", "");
+
         name = name.toLowerCase();
         name = name.replace("-", "_");
         name = name+"_small";
+
+        name = name+add;
 
         int resID = getResId(name, "drawable");
         if (resID==0) return R.drawable.no_img;
@@ -18,8 +28,14 @@ public class Utils {
     }
 
     public static int getBigImage(String name) {
+        String add = "";
+        if (name.contains("_2")) add = "_2";
+        name = name.replace("_2", "");
+
         name = name.toLowerCase();
         name = name.replace("-", "_");
+
+        name = name+add;
 
         int resID = getResId(name, "drawable");
         if (resID==0) return R.drawable.no_img;
@@ -30,7 +46,10 @@ public class Utils {
         name = name.toLowerCase();
         name = name.replace("-", "_");
 
+        Log.e("TAG", "getDescriptionResource: "+name);
+
         int resID = getResId(name, "string");
+
         if (resID==0) return "";
         return App.getContext().getString(resID);
     }

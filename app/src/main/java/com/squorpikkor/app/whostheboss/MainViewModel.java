@@ -33,7 +33,6 @@ public class MainViewModel  extends AndroidViewModel {
         deviceList = new MutableLiveData<>();
         deviceList.setValue(dataEntity.getAllDev());
         listStyle = new MutableLiveData<>(0);
-        Log.e(TAG, "MainViewModel: "+deviceList.getValue().size());
     }
 
     public MutableLiveData<Integer> getListStyle() {
@@ -53,12 +52,12 @@ public class MainViewModel  extends AndroidViewModel {
     }
 
     public void setCategory(int cat) {
-        Log.e(TAG, "♦setCategory: "+cat);
         deviceList.setValue(dataEntity.getAllDevByCat(cat));
     }
 
     public void toggleStyle() {
+        Log.e(TAG, "toggleStyle: "+listStyle.getValue());
         if (listStyle.getValue()==LINEAR) listStyle.setValue(GRID);
-        if (listStyle.getValue()==GRID) listStyle.setValue(LINEAR);
+        else if (listStyle.getValue()==GRID) listStyle.setValue(LINEAR);
     }
 }

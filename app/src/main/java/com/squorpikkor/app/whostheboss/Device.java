@@ -50,14 +50,15 @@ public class Device {
         this.category = category;
     }
 
-    public Device(String name, String shortName, String years, int status, int category, int description) {
+    //description не нужно указывать!!! подхватится автоматом при наличии!!! см. getDescriptionResource
+    /*public Device(String name, String shortName, String years, int status, int category, int description) {
         this.name = name;
         this.shortName = shortName;
         this.years = years;
         this.status = status;
         this.category = category;
         this.description = description;
-    }
+    }*/
 
     public int getId() {
         return id;
@@ -75,8 +76,9 @@ public class Device {
         this.name = name;
     }
 
+    /**Смысл сплита: после _ (при наличии, есть только у некоторых) идет версия рисунка (может быть у разных педалей одинаковое короткое имя)*/
     public String getShortName() {
-        return shortName;
+        return shortName.split("_")[0];
     }
 
     public void setShortName(String shortName) {
@@ -113,5 +115,9 @@ public class Device {
 
     public void setDescription(int description) {
         this.description = description;
+    }
+
+    public String getShortNameFull() {
+        return shortName;
     }
 }
