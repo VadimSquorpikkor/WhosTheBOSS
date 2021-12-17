@@ -61,8 +61,8 @@ public class AdapterDeviceGrid extends RecyclerView.Adapter<AdapterDeviceGrid.De
     @Override
     public void onBindViewHolder(@NonNull DeviceViewHolder holder, int position) {
         Device device = list.get(position);
+        holder.img.setImageResource(device.getBigImage());
 //        holder.img.setImageResource(device.getSmallImage());
-        holder.img.setImageResource(Utils.getSmallImage(device.getShortNameFull()));
         holder.shortName.setText(device.getShortName());
         holder.name.setText(device.getName());
     }

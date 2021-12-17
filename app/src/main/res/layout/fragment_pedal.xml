@@ -60,4 +60,23 @@
         android:layout_height="wrap_content"
         android:background="#000000"
         android:text="1978 - now" />
+
+    <LinearLayout style="@style/horizontal">
+
+        <CheckBox
+            android:id="@+id/wish_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Wish list"/>
+
+        <CheckBox
+            android:id="@+id/have_it"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Have it"/>
+
+    </LinearLayout>
+
 </LinearLayout>

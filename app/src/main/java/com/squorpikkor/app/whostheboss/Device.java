@@ -16,108 +16,57 @@ public class Device {
     public static final int CHORUS = 2048;
     public static final int SERIES_10 = 4096;
     public static final int SERIES_20 = 8192;
-//    public static final int SERIES_200 = 512;
-//    public static final int SERIES_500 = 512;
-
-
-    public static final int HAVE_GOT = 2;
-    public static final int WISH_LIST = 4;
-
-    private int id;
+    //todo public static final int SERIES_200 = 512;
+    //todo public static final int SERIES_500 = 512;
 
     /**Имя (Distortion)*/
-    private String name;
+    private final String name;
 
-    /**Короткое имя (DS-1)*/
-    private String shortName;
+    /**Короткое имя (DS-1) получается из id*/
+    private final String id;
 
-    private String years;
-
-    /**моё отношение: хочу купить, есть такая, не нужна*/
-    private int status;
+    private final String years;
 
     /**Категория: ревер, дисторшн, waza craft...*/
-    private int category;
+    private final int category;
 
-    private int description;
-
-
-    public Device(String name, String shortName, String years, int status, int category) {
+    public Device(String name, String id, String years, int category) {
         this.name = name;
-        this.shortName = shortName;
-        this.years = years;
-        this.status = status;
-        this.category = category;
-    }
-
-    //description не нужно указывать!!! подхватится автоматом при наличии!!! см. getDescriptionResource
-    /*public Device(String name, String shortName, String years, int status, int category, int description) {
-        this.name = name;
-        this.shortName = shortName;
-        this.years = years;
-        this.status = status;
-        this.category = category;
-        this.description = description;
-    }*/
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
         this.id = id;
+        this.years = years;
+        this.category = category;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     /**Смысл сплита: после _ (при наличии, есть только у некоторых) идет версия рисунка (может быть у разных педалей одинаковое короткое имя)*/
     public String getShortName() {
-        return shortName.split("_")[0];
-    }
-
-    public void setShortName(String shortName) {
-        this.shortName = shortName;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
+        return id.split("_")[0];
     }
 
     public int getCategory() {
         return category;
     }
 
-    public void setCategory(int category) {
-        this.category = category;
-    }
-
     public String getYears() {
         return years;
     }
 
-    public void setYears(String years) {
-        this.years = years;
+    public int getSmallImage() {
+        return Utils.getSmallImage(id);
     }
 
-    public int getDescription() {
-        return description;
+    public int getBigImage() {
+        return Utils.getBigImage(id);
     }
 
-    public void setDescription(int description) {
-        this.description = description;
-    }
-
-    public String getShortNameFull() {
-        return shortName;
+    public String getDescription() {
+        return Utils.getDescriptionResource(getShortName());
     }
 }

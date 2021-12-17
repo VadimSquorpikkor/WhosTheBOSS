@@ -43,8 +43,6 @@ import static com.squorpikkor.app.whostheboss.Device.WAZA_CRAFT;
 import static com.squorpikkor.app.whostheboss.MainViewModel.GRID;
 import static com.squorpikkor.app.whostheboss.MainViewModel.LINEAR;
 
-import io.reactivex.internal.operators.flowable.FlowableGenerate;
-
 public class DeviceFragment extends Fragment {
 
     public static DeviceFragment newInstance() {
@@ -66,15 +64,12 @@ public class DeviceFragment extends Fragment {
         mViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
 
         view.findViewById(R.id.style_toggle).setOnClickListener(v->mViewModel.toggleStyle());
+        view.findViewById(R.id.show_wishlist).setOnClickListener(v->mViewModel.toggleWish());
+        view.findViewById(R.id.show_have_list).setOnClickListener(v->mViewModel.toggleHave());
 
         mViewModel.getListStyle().observe(getViewLifecycleOwner(), this::setRecycler);
 
         foundRecyclerView = view.findViewById(R.id.recycler_main);
-//        adapter = new AdapterDevice();
-//        foundRecyclerView.setLayoutManager(linear);
-//        foundRecyclerView.setAdapter(adapter);
-//        adapter.setOnItemClickListener(this::openDeviceInfo);
-//        mViewModel.getDeviceList().observe(getViewLifecycleOwner(), list -> adapter.setList(list));
 
         initMap();
 //        spinnerList = new String[catMap.size()];
@@ -101,6 +96,7 @@ public class DeviceFragment extends Fragment {
             }
         });
 
+
         return view;
     }
 
@@ -114,7 +110,7 @@ public class DeviceFragment extends Fragment {
             adapter.setOnItemClickListener(this::openDeviceInfo);
             mViewModel.getDeviceList().observe(getViewLifecycleOwner(), list -> adapter.setList(list));
         } else if (style == GRID) {
-            RecyclerView.LayoutManager grid = new GridLayoutManager(getActivity(), 3);
+            RecyclerView.LayoutManager grid = new GridLayoutManager(getActivity(), 4);
             adapterGrid = new AdapterDeviceGrid();
             foundRecyclerView.setLayoutManager(grid);
             foundRecyclerView.setAdapter(adapterGrid);

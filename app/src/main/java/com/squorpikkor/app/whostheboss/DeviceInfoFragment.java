@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -62,9 +63,9 @@ public class DeviceInfoFragment extends Fragment {
 
         nameView.setText(device.getName());
         shortNameView.setText(device.getShortName());
-        imageView.setImageResource(Utils.getBigImage(device.getShortNameFull()));
+        imageView.setImageResource(device.getBigImage());
         yearView.setText(device.getYears());
-        String description = Utils.getDescriptionResource(device.getShortName());
+        String description = device.getDescription();
         descText.setText(description);
 
         descSwitch.setOnClickListener(view1 -> switchDescription());
@@ -73,6 +74,12 @@ public class DeviceInfoFragment extends Fragment {
             descView.setVisibility(View.GONE);
             descSwitch.setVisibility(View.GONE);
         }
+
+        CheckBox wishBox = view.findViewById(R.id.wish_list);
+        CheckBox haveBox = view.findViewById(R.id.have_it);
+
+        wishBox.setOnClickListener(v->model.setWishList(wishBox.isChecked(), device.getId()));
+        haveBox.setOnClickListener(v->model.setHaveList(haveBox.isChecked(), device.getId()));
 
         return view;
     }

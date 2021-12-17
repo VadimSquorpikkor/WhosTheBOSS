@@ -11,6 +11,10 @@ public class Utils {
         return category;
     }
 
+    /**Возвращает маленькую картинку используя короткое имя: "TW-1" -> int (идентификатор) "R.drawable.tw_1_small".
+     * Для случаев, когда у разных устройств одинаковое короткое имя (Digital Space-D и Digital Dimension имеют короткое имя DC-3),
+     * используется короткое имя типа "DC-3_2" (добавление "_2"), которое возвращает идентификатор R.drawable.dc_3_2_small, но в UI
+     * такое имя будет всё равно отображаться, как DC-3*/
     public static int getSmallImage(String name) {
         String add = "";
         if (name.contains("_2")) add = "_2";

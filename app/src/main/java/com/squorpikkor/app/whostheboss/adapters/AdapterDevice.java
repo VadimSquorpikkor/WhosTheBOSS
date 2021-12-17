@@ -62,7 +62,8 @@ public class AdapterDevice extends RecyclerView.Adapter<AdapterDevice.DeviceView
     public void onBindViewHolder(@NonNull DeviceViewHolder holder, int position) {
         Device device = list.get(position);
 //        holder.img.setImageResource(device.getSmallImage());
-        holder.img.setImageResource(Utils.getSmallImage(device.getShortNameFull()));
+//        holder.img.setImageResource(Utils.getSmallImage(device.getShortNameFull()));
+        holder.img.setImageResource(device.getSmallImage());
         holder.shortName.setText(device.getShortName());
         holder.name.setText(device.getName());
         holder.years.setText(device.getYears());
