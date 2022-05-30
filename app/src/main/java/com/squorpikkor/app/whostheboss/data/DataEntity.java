@@ -65,11 +65,11 @@ public class DataEntity {
     }
 
     private void saveWishList() {
-        SaveLoad.saveStringSet(WISH_SET, wishList);
+        SaveLoad.saveSet(WISH_SET, wishList);
     }
 
     private void saveHaveList() {
-        SaveLoad.saveStringSet(HAVE_SET, haveList);
+        SaveLoad.saveSet(HAVE_SET, haveList);
     }
 
     public void removeFromWishList(String id) {

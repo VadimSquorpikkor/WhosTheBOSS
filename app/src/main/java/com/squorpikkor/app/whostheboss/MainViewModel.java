@@ -1,6 +1,8 @@
 package com.squorpikkor.app.whostheboss;
 
 import android.app.Application;
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
@@ -15,6 +17,7 @@ public class MainViewModel  extends AndroidViewModel {
     public static final int LINEAR = 0;
     public static final int GRID = 1;
 
+    public static final String PREF_STYLE = "pref_style";
 
 
     private final MutableLiveData<List<Device>> deviceList;
@@ -27,8 +30,7 @@ public class MainViewModel  extends AndroidViewModel {
         dataEntity = new DataEntity();
         deviceList = new MutableLiveData<>();
         deviceList.setValue(dataEntity.getAllDev());
-        listStyle = new MutableLiveData<>(LINEAR);
-
+        listStyle = new MutableLiveData<>(SaveLoad.loadInt(PREF_STYLE));
     }
 
     public MutableLiveData<Integer> getListStyle() {
@@ -54,6 +56,7 @@ public class MainViewModel  extends AndroidViewModel {
         if (listStyle.getValue()==null) listStyle.setValue(LINEAR);
         if (listStyle.getValue()==LINEAR) listStyle.setValue(GRID);
         else if (listStyle.getValue()==GRID) listStyle.setValue(LINEAR);
+        SaveLoad.save(PREF_STYLE, listStyle.getValue());
     }
 
     public void setWishList(boolean add, String id) {
